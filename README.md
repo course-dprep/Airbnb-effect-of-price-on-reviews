@@ -1,26 +1,8 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11725981&assignment_repo_type=AssignmentRepo)
-# Ik heb dit nu aangepast
+# The Preliminary research question
+To what extent do the top 25% most expensive single rooms get more reviews than the bottom 25% of single rooms compared across 5 European capitals on a quarterly time base? An analysis of multiple cities and time-frames.
 
-#preliminary research question=
-To what extent do the top 25% most expensive single rooms get more reviews than the bottom 25% of single rooms compared across (5?) European capitals on a quarterly time base? An analysis of multiple cities and time-frames.
-This is a basic example repository using Gnu make for a reproducible research workflow, as described in detail here: [tilburgsciencehub.com](http://tilburgsciencehub.com/). 
-
-The main aim of this to have a basic structure, which can be easily adjusted to use in an actual project.  In this example project, the following is done: 
-1. Download and prepare data
-2. Run some analysis
-3. Present results in a final pdf generated using LaTeX
-
-## Dependencies
-- R 
-- R packages: `install.packages("stargazer")`
-- [Gnu Make](https://tilburgsciencehub.com/get/make) 
-- [TeX distribution](https://tilburgsciencehub.com/get/latex/?utm_campaign=referral-short)
-- For the `makefile` to work, R, Gnu make and the TeX distribution (specifically `pdflatex`) need to be made available in the system path 
-- Detailed installation instructions can be found here: [tilburgsciencehub.com](http://tilburgsciencehub.com/)
+# Choice for research method
+The importance of considering the pricing on reviews is to gain a better understanding of the relationship between reviews and pricing of housing. The research method chosen is ....
 
 
-## Notes
-- `make clean` removes all unncessary temporary files. 
-- Tested under Linux Mint (should work in any linux distro, as well as on Windows and Mac) 
-- IMPORTANT: In `makefile`, when using `\` to split code into multiple lines, no space should follow `\`. Otherwise Gnu make aborts with error 193. 
-- Many possible improvements remain. Comments and contributions are welcome!
