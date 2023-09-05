@@ -1,5 +1,8 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11725981&assignment_repo_type=AssignmentRepo)
 # Ik heb dit nu aangepast
+
+#preliminary research question=
+To what extent do the top 25% most expensive single rooms get more reviews than the bottom 25% of single rooms compared across (5?) European capitals on a quarterly time base? An analysis of multiple cities and time-frames.
 This is a basic example repository using Gnu make for a reproducible research workflow, as described in detail here: [tilburgsciencehub.com](http://tilburgsciencehub.com/). 
 
 The main aim of this to have a basic structure, which can be easily adjusted to use in an actual project.  In this example project, the following is done: 
