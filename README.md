@@ -2,7 +2,12 @@
 # The Preliminary research question
 To what extent do the top 25% most expensive single rooms get more reviews than the bottom 25% of single rooms compared across 5 European capitals on a quarterly time base? An analysis of multiple cities and time-frames.
 
-# Choice for research method
+# Project's goal: Choice for research method
 The importance of considering the pricing on reviews is to gain a better understanding of the relationship between reviews and pricing of housing. The research method chosen is ....
 
+# How to run the project
 
+# Main results
+- 1
+- 2
+- 3
