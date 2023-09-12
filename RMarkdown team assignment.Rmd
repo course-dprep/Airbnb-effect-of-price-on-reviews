@@ -1,0 +1,57 @@
+---
+title: "Team Project"
+output: html_document
+date: "2023-09-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+
+download.file('http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2023-09-03/visualisations/listings.csv',"appartments.csv")
+library(tidyverse)
+
+view('appartments.csv')
+
+# Assuming you have a data frame named 'listings' with columns: price, reviews, and date.
+
+# Sort by price in ascending order
+sorted_listings <- appartments[order(appartments$price), ]
+
+# Select the top 100 and bottom 100 listings
+top_100 <- sorted_listings[1:100, ]
+bottom_100 <- sorted_listings[(nrow(sorted_listings) - 99):nrow(sorted_listings), ]
+
+# Calculate the total number of reviews for each subset
+total_reviews_top <- sum(top_100$number_of_reviews)
+total_reviews_bottom <- sum(bottom_100$number_of_reviews)
+
+# Compare the total number of reviews
+if (total_reviews_top > total_reviews_bottom) {
+  cat("Top 100 listings have more reviews than bottom 100 listings.")
+} else if (total_reviews_top < total_reviews_bottom) {
+  cat("Bottom 100 listings have more reviews than top 100 listings.")
+} else {
+  cat("Top 100 and bottom 100 listings have the same number of reviews.")
+}
+
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
