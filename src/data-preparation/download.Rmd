@@ -1,0 +1,97 @@
+---
+title: "Data download of cities"
+output: html_document
+date: "2023-09-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+
+## code voor downloaden Amsterdam listings data ##
+
+install.packages("tidyverse")
+library(tidyverse)
+
+urls = c('http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2023-09-03/visualisations/listings.csv', 'http://data.insideairbnb.com/belgium/bru/brussels/2023-06-24/visualisations/listings.csv', 'http://data.insideairbnb.com/united-kingdom/england/london/2023-06-08/visualisations/listings.csv')
+
+download.file("http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2023-09-03/visualisations/listings.csv", "amsterdam_listings.csv")
+library(tidyverse)
+
+prototype = TRUE
+n_max = Inf
+if (prototype==TRUE) n_max = n_max
+amsterdam_listings <- read_csv('amsterdam_listings.csv', n_max = n_max)
+
+
+```
+```{r}
+## Code voor downloaden van data listings brussels
+
+download.file("http://data.insideairbnb.com/belgium/bru/brussels/2023-06-24/visualisations/listings.csv", "brussels_listings.csv")
+library(tidyverse)
+
+prototype = TRUE
+n_max = Inf
+if (prototype==TRUE) n_max = n_max
+brussels_listings <- read_csv('brussels_listings.csv', n_max = n_max)
+
+
+
+
+```
+```{r}
+
+download.file("http://data.insideairbnb.com/united-kingdom/england/london/2023-06-08/visualisations/listings.csv", "london_listings.csv")
+library(tidyverse)
+
+prototype = TRUE
+n_max = Inf
+if (prototype==TRUE) n_max = n_max
+london_listings <- read_csv('london_listings.csv', n_max = n_max)
+
+
+```
+```{r}
+download.file("http://data.insideairbnb.com/germany/be/berlin/2023-06-22/visualisations/listings.csv", "berlin_listings.csv")
+library(tidyverse)
+
+prototype = TRUE
+n_max = Inf
+if (prototype==TRUE) n_max = n_max
+berlin_listings <- read_csv('berlin_listings.csv', n_max = n_max)
+```
+```{r}
+download.file("http://data.insideairbnb.com/france/ile-de-france/paris/2023-06-06/visualisations/listings.csv", "paris_listings.csv")
+library(tidyverse)
+
+prototype = TRUE
+n_max = Inf
+if (prototype==TRUE) n_max = n_max
+paris_listings <- read_csv('paris_listings.csv', n_max = n_max)
+```
+```{r}
+
+```
+
