@@ -23,12 +23,15 @@ view('appartments.csv')
 
 # Assuming you have a data frame named 'listings' with columns: price, reviews, and date.
 
+# Filter data for single rooms in Amsterdam
+amsterdam_single_rooms <- subset(appartments, room_type == "Private room")
+
 # Sort by price in ascending order
-sorted_listings <- appartments[order(appartments$price), ]
+sorted_listings <- amsterdam_single_rooms[order(amsterdam_single_rooms$price), ]
 
 # Select the top 100 and bottom 100 listings
-top_100 <- sorted_listings[1:100, ]
-bottom_100 <- sorted_listings[(nrow(sorted_listings) - 99):nrow(sorted_listings), ]
+bottom_100 <- sorted_listings[1:100, ]
+top_100 <- sorted_listings[(nrow(sorted_listings) - 99):nrow(sorted_listings), ]
 
 # Calculate the total number of reviews for each subset
 total_reviews_top <- sum(top_100$number_of_reviews)
@@ -36,12 +39,27 @@ total_reviews_bottom <- sum(bottom_100$number_of_reviews)
 
 # Compare the total number of reviews
 if (total_reviews_top > total_reviews_bottom) {
-  cat("Top 100 listings have more reviews than bottom 100 listings.")
+  cat("Top 100 single room listings have more reviews than bottom 100 single room listings.")
 } else if (total_reviews_top < total_reviews_bottom) {
-  cat("Bottom 100 listings have more reviews than top 100 listings.")
+  cat("Bottom 100 single room listings have more reviews than top 100 single room listings.")
 } else {
-  cat("Top 100 and bottom 100 listings have the same number of reviews.")
+  cat("Top 100 and bottom 100 single room listings have the same number of reviews.")
 }
+
+
+urls = c('http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2023-09-03/visualisations/listings.csv', 'http://data.insideairbnb.com/germany/be/berlin/2023-06-22/visualisations/listings.csv', 'http://data.insideairbnb.com/belgium/bru/brussels/2023-06-24/visualisations/listings.csv', 'http://data.insideairbnb.com/united-kingdom/england/london/2023-06-08/visualisations/listings.csv', 'http://data.insideairbnb.com/france/ile-de-france/paris/2023-06-06/visualisations/listings.csv')
+
+datasets <- lapply(urls, read_csv, n_max = Inf)
+
+datasets[[1]]
+datasets[[2]]
+datasets[[3]]
+datasets[[4]]
+datasets[[5]]
+
+bind_rows(datasets)
+
+
 
 
 ```
