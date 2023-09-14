@@ -16,37 +16,6 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ```{r}
 
-download.file('http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2023-09-03/visualisations/listings.csv',"appartments.csv")
-library(tidyverse)
-
-view('appartments.csv')
-
-# Assuming you have a data frame named 'listings' with columns: price, reviews, and date.
-
-# Filter data for single rooms in Amsterdam
-amsterdam_single_rooms <- subset(appartments, room_type == "Private room")
-
-# Sort by price in ascending order
-sorted_listings <- amsterdam_single_rooms[order(amsterdam_single_rooms$price), ]
-
-# Select the top 100 and bottom 100 listings
-bottom_100 <- sorted_listings[1:100, ]
-top_100 <- sorted_listings[(nrow(sorted_listings) - 99):nrow(sorted_listings), ]
-
-# Calculate the total number of reviews for each subset
-total_reviews_top <- sum(top_100$number_of_reviews)
-total_reviews_bottom <- sum(bottom_100$number_of_reviews)
-
-# Compare the total number of reviews
-if (total_reviews_top > total_reviews_bottom) {
-  cat("Top 100 single room listings have more reviews than bottom 100 single room listings.")
-} else if (total_reviews_top < total_reviews_bottom) {
-  cat("Bottom 100 single room listings have more reviews than top 100 single room listings.")
-} else {
-  cat("Top 100 and bottom 100 single room listings have the same number of reviews.")
-}
-
-
 urls = c('http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2023-09-03/visualisations/listings.csv', 'http://data.insideairbnb.com/germany/be/berlin/2023-06-22/visualisations/listings.csv', 'http://data.insideairbnb.com/belgium/bru/brussels/2023-06-24/visualisations/listings.csv', 'http://data.insideairbnb.com/united-kingdom/england/london/2023-06-08/visualisations/listings.csv', 'http://data.insideairbnb.com/france/ile-de-france/paris/2023-06-06/visualisations/listings.csv')
 
 datasets <- lapply(urls, read_csv, n_max = Inf)
@@ -59,37 +28,52 @@ datasets[[5]]
 
 bind_rows(datasets)
 
-# Definieer de functie
-assignment_data <- function(dataset) {
-  # Filter de dataset voor 'Private room'
-  private_rooms <- dataset %>%
-    filter(room_type == 'Private room')
+# Functie om reviews te berekenen voor een specifieke stad
+calculate_reviews_for_city <- function(dataset, city_name, top_n = 100, bottom_n = 100) {
+  # Filter data voor de opgegeven stad
+  city_data <- subset(dataset, room_type == "Private room")
   
-  # Sorteer de dataset op prijs in oplopende en aflopende volgorde
-  sorted_private_rooms_cheapest <- private_rooms %>%
-    arrange(Price) %>%
-    head(100)
+  # Sorteer de dataset op prijs in oplopende volgorde
+  sorted_listings <- city_data[order(city_data$price), ]
   
-  sorted_private_rooms_expensive <- private_rooms %>%
-    arrange(desc(Price)) %>%
-    head(100)
+  # Selecteer de top 100 en bottom 100 listings
+  bottom_100 <- sorted_listings[1:bottom_n, ]
+  top_100 <- sorted_listings[(nrow(sorted_listings) - (top_n - 1)):nrow(sorted_listings), ]
   
-  # Bereken het totale aantal reviews voor de goedkoopste en duurste kamers
-  total_reviews_cheapest <- sum(sorted_private_rooms_cheapest$reviews)
-  total_reviews_expensive <- sum(sorted_private_rooms_expensive$reviews)
+  # Bereken het totale aantal reviews voor elk subset
+  total_reviews_top <- sum(top_100$number_of_reviews)
+  total_reviews_bottom <- sum(bottom_100$number_of_reviews)
   
-  # Retourneer de resultaten
-  return(list(total_reviews_cheapest = total_reviews_cheapest, total_reviews_expensive = total_reviews_expensive))
+  # Vergelijk het totale aantal reviews en geef resultaat weer met getallen
+  if (total_reviews_top > total_reviews_bottom) {
+    cat(paste("Top", top_n, "single room listings in", city_name, "have more reviews (", total_reviews_top, ") than bottom", bottom_n, "single room listings (", total_reviews_bottom, ").\n"))
+  } else if (total_reviews_top < total_reviews_bottom) {
+    cat(paste("Bottom", bottom_n, "single room listings in", city_name, "have more reviews (", total_reviews_bottom, ") than top", top_n, "single room listings (", total_reviews_top, ").\n"))
+  } else {
+    cat(paste("Top", top_n, "and bottom", bottom_n, "single room listings in", city_name, "have the same number of reviews (", total_reviews_top, ").\n"))
+  }
 }
 
-# Roep de functie aan met je dataset
-result <- assignment_data(my_dataset)
+# Voorbeeldgebruik:
 
-# Resultaten voor de 100 goedkoopste kamers
-cat("Totaal aantal reviews voor de 100 goedkoopste kamers:", result$total_reviews_cheapest, "\n")
+# Amsterdam (dataset 1)
+calculate_reviews_for_city(datasets[[1]], city_name = "Amsterdam")
 
-# Resultaten voor de 100 duurste kamers
-cat("Totaal aantal reviews voor de 100 duurste kamers:", result$total_reviews_expensive, "\n")  
+# Berlijn (dataset 2)
+calculate_reviews_for_city(datasets[[2]], city_name = "Berlijn")
+
+# Brussel (dataset 3)
+calculate_reviews_for_city(datasets[[3]], city_name = "Brussel")
+
+# Londen (dataset 4)
+calculate_reviews_for_city(datasets[[4]], city_name = "Londen")
+
+# Parijs (dataset 5)
+calculate_reviews_for_city(datasets[[5]], city_name = "Parijs")
+
+
+
+
 
 
 ```
