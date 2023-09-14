@@ -59,7 +59,37 @@ datasets[[5]]
 
 bind_rows(datasets)
 
+# Definieer de functie
+assignment_data <- function(dataset) {
+  # Filter de dataset voor 'Private room'
+  private_rooms <- dataset %>%
+    filter(room_type == 'Private room')
+  
+  # Sorteer de dataset op prijs in oplopende en aflopende volgorde
+  sorted_private_rooms_cheapest <- private_rooms %>%
+    arrange(Price) %>%
+    head(100)
+  
+  sorted_private_rooms_expensive <- private_rooms %>%
+    arrange(desc(Price)) %>%
+    head(100)
+  
+  # Bereken het totale aantal reviews voor de goedkoopste en duurste kamers
+  total_reviews_cheapest <- sum(sorted_private_rooms_cheapest$reviews)
+  total_reviews_expensive <- sum(sorted_private_rooms_expensive$reviews)
+  
+  # Retourneer de resultaten
+  return(list(total_reviews_cheapest = total_reviews_cheapest, total_reviews_expensive = total_reviews_expensive))
+}
 
+# Roep de functie aan met je dataset
+result <- assignment_data(my_dataset)
+
+# Resultaten voor de 100 goedkoopste kamers
+cat("Totaal aantal reviews voor de 100 goedkoopste kamers:", result$total_reviews_cheapest, "\n")
+
+# Resultaten voor de 100 duurste kamers
+cat("Totaal aantal reviews voor de 100 duurste kamers:", result$total_reviews_expensive, "\n")  
 
 
 ```
