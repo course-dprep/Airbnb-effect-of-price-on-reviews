@@ -71,6 +71,122 @@ calculate_reviews_for_city(datasets[[4]], city_name = "Londen")
 # Parijs (dataset 5)
 calculate_reviews_for_city(datasets[[5]], city_name = "Parijs")
 
+#################################################################################################################################################################################### ONDERSTAANDE CODE HEEFT HET GEDAAN ALLEEN NU INEENS NIET MEER, KRIJG + TEKENS IN CONSOLE ALS IK HEM RUN
+
+# Define a function to analyze Airbnb data from multiple URLs
+analyze_airbnb_data <- function(url_list) {
+  # Initialize empty lists to store results
+  total_reviews_top_list <- vector("numeric", length(url_list))
+  total_reviews_bottom_list <- vector("numeric", length(url_list))
+  
+  for (i in seq_along(url_list)) {
+    url <- url_list[i]
+    
+    # Read the CSV data from the URL and store it in a data frame
+    my_dataset <- read.csv(url)
+    
+    # Filter data for single rooms in Amsterdam
+    amsterdam_single_rooms <- subset(my_dataset, room_type == "Private room")
+    
+    # Sort by price in ascending order
+    sorted_listings <- amsterdam_single_rooms[order(amsterdam_single_rooms$price), ]
+    
+    # Select the top 100 and bottom 100 listings
+    bottom_100 <- sorted_listings[1:100, ]
+    top_100 <- sorted_listings[(nrow(sorted_listings) - 99):nrow(sorted_listings), ]
+    
+    # Calculate the total number of reviews for each subset
+    total_reviews_top <- sum(top_100$number_of_reviews)
+    total_reviews_bottom <- sum(bottom_100$number_of_reviews)
+    
+    # Store the results in the corresponding lists
+    total_reviews_top_list[i] <- total_reviews_top
+    total_reviews_bottom_list[i] <- total_reviews_bottom
+    
+    # Print the results for each URL
+    cat("Results for URL", i, "— Total reviews for the top 100 listings:", total_reviews_top, "\n")
+    cat("Results for URL", i, "— Total reviews for the bottom 100 listings:", total_reviews_bottom, "\n")
+  }
+  
+  # Return a list of results
+  results <- list(
+    total_reviews_top = total_reviews_top_list,
+    total_reviews_bottom = total_reviews_bottom_list
+  )
+  
+  return(results)
+}
+
+# Define a list of URLs to analyze
+urls_to_analyze <- c(
+  'http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2023-09-03/visualisations/listings.csv',
+  'http://data.insideairbnb.com/germany/be/berlin/2023-06-22/visualisations/listings.csv',
+  'http://data.insideairbnb.com/belgium/bru/brussels/2023-06-24/visualisations/listings.csv',
+  'http://data.insideairbnb.com/united-kingdom/england/london/2023-06-08/visualisations/listings.csv',
+  'http://data.insideairbnb.com/france/ile-de-france/paris/2023-06-06/visualisations/listings.csv'
+)
+
+# Call the function to analyze the Airbnb data from multiple URLs
+results <- analyze_airbnb_data(urls_to_analyze)
+################################################################################################################################################################################### ONDERSTAANDE CODE MOET DE UITEINDELIJKE CODE GAAN WORDEN
+# Define a function to analyze Airbnb data from named URLs
+analyze_airbnb_data <- function(url_map) {
+  # Initialize empty lists to store results
+  total_reviews_top_list <- vector("numeric", length(url_map))
+  total_reviews_bottom_list <- vector("numeric", length(url_map))
+  
+  for (i in seq_along(url_map)) {
+    url_name <- names(url_map)[i]
+    url <- url_map[[url_name]]
+    
+    # Read the CSV data from the URL and store it in a data frame
+    my_dataset <- read.csv(url)
+    
+    # Filter data for single rooms in Amsterdam
+    amsterdam_single_rooms <- subset(my_dataset, room_type == "Private room")
+    
+    # Sort by price in ascending order
+    sorted_listings <- amsterdam_single_rooms[order(amsterdam_single_rooms$price), ]
+    
+    # Select the top 100 and bottom 100 listings
+    bottom_100 <- sorted_listings[1:100, ]
+    top_100 <- sorted_listings[(nrow(sorted_listings) - 99):nrow(sorted_listings), ]
+    
+    # Calculate the total number of reviews for each subset
+    total_reviews_top <- sum(top_100$number_of_reviews)
+    total_reviews_bottom <- sum(bottom_100$number_of_reviews)
+    
+    # Store the results in the corresponding lists
+    total_reviews_top_list[i] <- total_reviews_top
+    total_reviews_bottom_list[i] <- total_reviews_bottom
+    
+    # Print the results for each URL with its name
+    cat("Results for", url_name, "- Total reviews for the top 100 listings:", total_reviews_top, "\n")
+    cat("Results for", url_name, "- Total reviews for the bottom 100 listings:", total_reviews_bottom, "\n")
+  }
+  
+  # Return a list of results
+  results <- list(
+    total_reviews_top = total_reviews_top_list,
+    total_reviews_bottom = total_reviews_bottom_list
+  )
+  
+  return(results)
+}
+
+# Define a named list of URLs to analyze
+url_map <- list(
+  amsterdam = 'http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2023-09-03/visualisations/listings.csv',
+  berlin = 'http://data.insideairbnb.com/germany/be/berlin/2023-06-22/visualisations/listings.csv',
+  brussels = 'http://data.insideairbnb.com/belgium/bru/brussels/2023-06-24/visualisations/listings.csv',
+  london = 'http://data.insideairbnb.com/united-kingdom/england/london/2023-06-08/visualisations/listings.csv',
+  paris = 'http://data.insideairbnb.com/france/ile-de-france/paris/2023-06-06/visualisations/listings.csv'
+)
+
+# Call the function to analyze the Airbnb data from named URLs
+results <- analyze_airbnb_data(url_map)
+
+
 
 
 
