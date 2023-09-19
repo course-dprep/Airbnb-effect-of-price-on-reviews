@@ -1,6 +1,9 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11725981&assignment_repo_type=AssignmentRepo)
 # The impact of reviews on the top 100 most expensive and least expensive single rooms of Airbnb
 
+![image](https://github.com/course-dprep/team-project-data-prep-team-10/assets/143409405/4b4503f3-bea1-4c63-bd7a-988ae92ec1b5)
+
+
 # Project description
 Leaving a review and sharing it with the world wide web is only a matter of second. The rise of the internet gave room for leaving reviews about anything, anywhere, very easily. Whereas a few decades a go people relied more on word of mouth and written reviews in papers, nowadays we have access to millions of reviews in just a few mouse clicks.
 
