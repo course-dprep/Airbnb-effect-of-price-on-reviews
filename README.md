@@ -26,15 +26,46 @@ __Variable types__
 
 | Variable     | Description      | Data class     |
 | ------------- | ------------- | -------- |
-| Variable          | Test1         | NewYork  |
-| Price          | Test2         | Toronto  |
-| Date          | June 2023 & December 2022         | Toronto  |
-| Room type          | single room         | Toronto  |
+| City          | City of observation         | character  |
+| Price          | Listing price of room per night         | numeric  |
+| Date          | June 2023 & December 2022         | Date  |
+| Room type          | single room         | character  |
 
 
-# How to run the project
+##  Type of analysis
+The type of analysis that is used in this paper
 
-# Main results
+# Conclusion analysis
 - 1
 - 2
 - 3
+
+  # Structure of the repository
+  ├── data
+├── gen
+   ├── analysis
+   ├── data-preparation
+   └── paper
+└── src
+   ├── analysis
+   ├── data-preparation
+   └── paper
+├── .gitignore
+├── README.md
+├── makefile
+
+# Example of workflow research reproduction
+
+# How to run the project
+
+# Source
+* Insideairbnb (http://insideairbnb.com/get-the-data/)
+
+# Notes
+
+# Authors
+This repository is developed by team 10 for the course Skills: Data Preperation & Workflow Management (Fall) under supervision of Hannes Datta. This course belongs to the marketing program Marketing Analytics of Tilburg School of Economics and Management. The team consists of the following members:
+* Denise Baltus
+* Sjuul Visscher
+* Max Baaten
+* Rick Massuger
