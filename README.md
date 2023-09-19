@@ -65,7 +65,7 @@ The type of analysis that is used in this paper
 
 # Authors
 This repository is developed by team 10 for the course Skills: Data Preperation & Workflow Management (Fall) under supervision of Hannes Datta. This course belongs to the marketing program Marketing Analytics of Tilburg School of Economics and Management. The team consists of the following members:
-* Denise Baltus
-* Sjuul Visscher
 * Max Baaten
+* Denise Baltus
 * Rick Massuger
+* Sjuul Visscher
