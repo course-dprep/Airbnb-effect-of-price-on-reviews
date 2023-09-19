@@ -1,5 +1,3 @@
-
-```{r}
 ## installing all necessary packages
 install.packages("tidyverse")
 library(tidyverse)
@@ -92,8 +90,3 @@ view(par200)
 ## NOW THAT WE HAVE ALL THE DATA ON THE 100 CHEAP AND EXPENSIVE PRIVATE ROOMS, MERGE THE DATA ##
 allcities_privatrooms_topbottom <- bind_rows(ams200, ber200, bru200, lon200, par200)
 view(allcities_privatrooms_topbottom)
-
-
-
-```
-
