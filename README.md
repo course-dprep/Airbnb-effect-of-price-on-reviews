@@ -11,7 +11,7 @@ __"To what extent do the top 100 most expensive single rooms get more reviews th
 # Analysis
 The importance of considering the pricing on reviews is to gain a better understanding of the relationship between reviews and pricing of housing. The research method chosen is ....
 
-The selected cities are:
+In this research, we have selected 5 capitals from western European countries. The reason for this is that those cities are most likely to have similar circumstances and thus will provide a solid background to research the question. The five selected cities are:
 * Amsterdam
 * Berlin
 * Brussels
@@ -21,6 +21,16 @@ The selected cities are:
 Two data points are used. The data is recent data from 2022 & 2023 and from two different seasons: summer and winter. The data used is semi-annual based data:
 * June 2023
 * December 2022
+
+__Variable types__
+
+| Variable     | Description      | Data class     |
+| ------------- | ------------- | -------- |
+| Variable          | Test1         | NewYork  |
+| Price          | Test2         | Toronto  |
+| Date          | June 2023 & December 2022         | Toronto  |
+| Room type          | single room         | Toronto  |
+
 
 # How to run the project
 
