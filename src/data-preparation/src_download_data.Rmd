@@ -66,33 +66,26 @@ par_privaterooms <- paris_listings %>%
 ams200 <- ams_privaterooms %>%
   arrange(price) %>%
   slice(c(1:100, (n() - 99):n()))
-view(ams200)
 
 ber200 <- ber_privaterooms %>%
   arrange(price) %>%
   slice(c(1:100, (n() - 99):n()))
-view(ber200)
 
 bru200 <- bru_privaterooms %>%
   arrange(price) %>%
   slice(c(1:100, (n() - 99):n()))
-view(bru200)
 
 lon200 <- lon_privaterooms %>%
   arrange(price) %>%
   slice(c(1:100, (n() - 99):n()))
-view(lon200)
 
 par200 <-par_privaterooms %>%
   arrange(price) %>%
   slice(c(1:100, (n() - 99):n()))
-view(par200)
-
 
 ## NOW THAT WE HAVE ALL THE DATA ON THE 100 CHEAP AND EXPENSIVE PRIVATE ROOMS, MERGE THE DATA ##
 allcities_privatrooms_topbottom <- bind_rows(ams200, ber200, bru200, lon200, par200)
 view(allcities_privatrooms_topbottom)
-
 
 
 ```
