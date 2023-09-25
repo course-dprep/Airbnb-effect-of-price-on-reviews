@@ -71,4 +71,4 @@ This repository is developed by team 10 for the course Skills: Data Preperation 
 * Max Baaten
 * Denise Baltus
 * Rick Massuger
-* Sjuul Visscher
+* Sjuul Visschers
