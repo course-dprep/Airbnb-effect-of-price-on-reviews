@@ -6,8 +6,6 @@ install.packages("dplyr")
 library(dplyr)
 
 
-
-
 ## TASK 1, DOWNLOADING ALL THE DATA FROM AIRBNB ##
 
 ## download the Amsterdam listings data ##
