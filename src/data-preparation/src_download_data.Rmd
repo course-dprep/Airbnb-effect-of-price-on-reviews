@@ -1,10 +1,12 @@
-
 ```{r}
 ## installing all necessary packages
 install.packages("tidyverse")
 library(tidyverse)
 install.packages("dplyr")
 library(dplyr)
+
+
+
 
 ## TASK 1, DOWNLOADING ALL THE DATA FROM AIRBNB ##
 
@@ -16,6 +18,7 @@ prototype = TRUE
 n_max = Inf
 if (prototype==TRUE) n_max = n_max
 amsterdam_listings <- read_csv('amsterdam_listings.csv', n_max = n_max)
+
 
 
 ## download the Brussels listings data ##
@@ -66,25 +69,35 @@ par_privaterooms <- paris_listings %>%
 ams200 <- ams_privaterooms %>%
   arrange(price) %>%
   slice(c(1:100, (n() - 99):n()))
+ams200_DV <- ams200 %>%
+  mutate(is_expensive = ifelse(row_number() <= 100, 0, 1))
 
 ber200 <- ber_privaterooms %>%
   arrange(price) %>%
   slice(c(1:100, (n() - 99):n()))
+ber200_DV <- ber200 %>%
+  mutate(is_expensive = ifelse(row_number() <= 100, 0, 1))
 
 bru200 <- bru_privaterooms %>%
   arrange(price) %>%
   slice(c(1:100, (n() - 99):n()))
+bru200_DV <- bru200 %>%
+  mutate(is_expensive = ifelse(row_number() <= 100, 0, 1))
 
 lon200 <- lon_privaterooms %>%
   arrange(price) %>%
   slice(c(1:100, (n() - 99):n()))
+lon200_DV <- lon200 %>%
+  mutate(is_expensive = ifelse(row_number() <= 100, 0, 1))
 
 par200 <-par_privaterooms %>%
   arrange(price) %>%
   slice(c(1:100, (n() - 99):n()))
+par200_DV <- par200 %>%
+  mutate(is_expensive = ifelse(row_number() <= 100, 0, 1))
 
 ## NOW THAT WE HAVE ALL THE DATA ON THE 100 CHEAP AND EXPENSIVE PRIVATE ROOMS, MERGE THE DATA ##
-allcities_privatrooms_topbottom <- bind_rows(ams200, ber200, bru200, lon200, par200)
+allcities_privatrooms_topbottom <- bind_rows(ams200_DV, ber200_DV, bru200_DV, lon200_DV, par200_DV)
 view(allcities_privatrooms_topbottom)
 
 
