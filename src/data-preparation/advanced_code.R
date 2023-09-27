@@ -30,4 +30,53 @@ for (city_name in names(citys)) {
 }
 
 # Now, you should have separate data frames named amsterdam, berlin, brussels, london, and paris.
+
+#code for private rooms segmentation
+city_names <- c("amsterdam", "berlin", "brussels", "paris", "london")
+
+# Loop through the city names and filter the corresponding data frames
+for (city_name in city_names) {
+  # Filter the data frame for "Private room" listings
+  assign(paste(city_name, "_private_rooms", sep = ""), 
+         get(city_name) %>%  # Access the original data frame by name
+           filter(room_type == "Private room"))
+  
+  # Print a message to indicate completion
+  cat("Filtered data for Private rooms in", city_name, "\n")
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```
