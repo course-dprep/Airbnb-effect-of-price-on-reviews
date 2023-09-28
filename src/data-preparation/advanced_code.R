@@ -34,6 +34,7 @@ for (city_name in names(citys)) {
 #code for private rooms segmentation
 city_names <- c("amsterdam", "berlin", "brussels", "paris", "london")
 
+
 # Loop through the city names and filter the corresponding data frames
 for (city_name in city_names) {
   # Filter the data frame for "Private room" listings
@@ -45,21 +46,20 @@ for (city_name in city_names) {
   cat("Filtered data for Private rooms in", city_name, "\n")
 }
 
+#sort private rooms by price in each city
+for (city_name in city_names) {
+  # Access the data frame for private rooms in the current city
+  city_df <- get(paste(city_name, "_private_rooms", sep = ""))
+  
+  # Sort the data frame by the "price" column in ascending order
+  sorted_df <- city_df %>% arrange(price)
+  
+  # Assign the sorted data frame back to the original variable
+  assign(paste(city_name, "_private_rooms", sep = ""), sorted_df)
+  
+  # Print a message to indicate completion
+  cat("Sorted data for Private rooms in", city_name, "by price\n")
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
