@@ -36,7 +36,7 @@ __Variable types__
 
 
 ##  Type of analysis
-The type of analysis that is used in this paper
+The type of analysis that is used in this paper *Needs to be done*
 
 # Conclusion analysis
 - 1
@@ -66,7 +66,7 @@ The type of analysis that is used in this paper
 
 # Notes
 
-# Authors
+# Authors *Add SNR*
 This repository is developed by team 10 for the course Skills: Data Preperation & Workflow Management (Fall) under supervision of Hannes Datta. This course belongs to the marketing program Marketing Analytics of Tilburg School of Economics and Management. The team consists of the following members:
 * Max Baaten
 * Denise Baltus
