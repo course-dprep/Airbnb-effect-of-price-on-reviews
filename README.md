@@ -21,10 +21,7 @@ In this research, we have selected 5 capitals from western European countries. T
 * London
 * Paris
 
-Two data points are used. The data is recent data from 2022 & 2023 and from two different seasons: summer and winter. The data used is semi-annual based data:
-* June 2023
-* December 2022
-*is this still relevant?* 
+Two data points are used. The top 100 most expensive and the 100 cheapest single rooms will be further examined in the research.
 
 __Variable types__
 
