@@ -116,8 +116,14 @@ reviews_summary <- allcities_privatrooms_topbottom %>%
     Expensive_100 = sum(number_of_reviews[is_expensive == 1])
   )
 
-# Check results
-print(reviews_summary)
+# Print results for each city
+cat("Results:\n")
+for (i in 1:nrow(reviews_summary)) {
+  cat("City: ", reviews_summary$city[i], "\n")
+  cat("Total Reviews for Cheapest 100: ", reviews_summary$Cheapest_100[i], "\n")
+  cat("Total Reviews for Most Expensive 100: ", reviews_summary$Expensive_100[i], "\n\n")
+}
+
 
 
 
