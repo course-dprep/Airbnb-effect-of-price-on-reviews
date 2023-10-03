@@ -9,7 +9,7 @@ Leaving a review and sharing it with the world wide web is only a matter of seco
 
 We are curious whether the amount of reviews is higher for the top 100 most expensive single room compared to the bottom top 100 least expensive single rooms. The reasoning is that people who book expensive rooms want to know that their rooms is from high quality and thus higher value lots of reviews. However, people who stay at budget Airbnb's are maybe more critical of booking a place with more reviews. In order to gain a deeper understanding of the amount of reviews of single rooms on the most expensive and least expensive Airbnb's we will conduct a research. We will atempt to answer the following question:
 
-__"To what extent do the top 100 most expensive single rooms get more reviews than the bottom top 100 of single rooms compared across 5 Western-European capitals (Amsterdam, Berlin, Brussels, London, Paris) on a quarterly time base? An analysis of multiple cities and time-frames."__
+__"To what extent do the top 100 most expensive single rooms get more reviews than the bottom top 100 of single rooms compared across 5 Western-European capitals (Amsterdam, Berlin, Brussels, London, Paris) on a quarterly time base? An analysis of multiple cities and time-frames."__ *are we doing a cross country analysis or just all expensive vs all cheap rooms?*
 
 # Analysis
 The importance of considering the pricing on reviews is to gain a better understanding of the relationship between reviews and pricing of housing. The research method chosen is ....
@@ -24,6 +24,7 @@ In this research, we have selected 5 capitals from western European countries. T
 Two data points are used. The data is recent data from 2022 & 2023 and from two different seasons: summer and winter. The data used is semi-annual based data:
 * June 2023
 * December 2022
+*is this still relevant?* 
 
 __Variable types__
 
@@ -36,7 +37,7 @@ __Variable types__
 
 
 ##  Type of analysis
-The type of analysis that is used in this paper
+The type of analysis that is used in this paper *Needs to be done*
 
 # Conclusion analysis
 - 1
@@ -66,7 +67,7 @@ The type of analysis that is used in this paper
 
 # Notes
 
-# Authors
+# Authors *Add SNR*
 This repository is developed by team 10 for the course Skills: Data Preperation & Workflow Management (Fall) under supervision of Hannes Datta. This course belongs to the marketing program Marketing Analytics of Tilburg School of Economics and Management. The team consists of the following members:
 * Max Baaten
 * Denise Baltus
