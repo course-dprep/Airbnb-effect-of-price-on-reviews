@@ -24,6 +24,7 @@ In this research, we have selected 5 capitals from western European countries. T
 Two data points are used. The data is recent data from 2022 & 2023 and from two different seasons: summer and winter. The data used is semi-annual based data:
 * June 2023
 * December 2022
+*is this still relevant?* 
 
 __Variable types__
 
