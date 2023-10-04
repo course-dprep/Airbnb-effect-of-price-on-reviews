@@ -46,7 +46,16 @@ for (city_name in city_names) {
   cat("Filtered data for Private rooms in", city_name, "\n")
 }
 
-#sort private rooms by price in each city
+
+
+
+
+
+
+
+#slice the top and bottom 100 listings by price for each city
+
+# Loop through the city names
 for (city_name in city_names) {
   # Access the data frame for private rooms in the current city
   city_df <- get(paste(city_name, "_private_rooms", sep = ""))
@@ -54,13 +63,18 @@ for (city_name in city_names) {
   # Sort the data frame by the "price" column in ascending order
   sorted_df <- city_df %>% arrange(price)
   
-  # Assign the sorted data frame back to the original variable
-  assign(paste(city_name, "_private_rooms", sep = ""), sorted_df)
+  # Create data frame for the combined 100 cheapest and 100 most expensive listings
+  combined_df <- bind_rows(
+    head(sorted_df, 100),  # Top 100 most expensive listings
+    tail(sorted_df, 100)   # Bottom 100 cheapest listings
+  )
+  
+  # Assign the combined data frame a unique name for each city
+  assign(paste(city_name, "_combined", sep = ""), combined_df)
   
   # Print a message to indicate completion
-  cat("Sorted data for Private rooms in", city_name, "by price\n")
+  cat("Sorted data by price and sliced top and bottom 100 listings in", city_name, "by price\n")
 }
-
 
 
 
