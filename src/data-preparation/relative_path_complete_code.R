@@ -29,6 +29,10 @@ for (city_name in names(citys)) {
   cat("Downloaded data for", city_name, "\n")
 }
 
+
+
+
+
 # Now, you should have separate data frames named amsterdam, berlin, brussels, london, and paris.
 
 #code for private rooms segmentation
@@ -79,6 +83,14 @@ for (city_name in city_names) {
 
 
 
+
+#code that combines all subsets we are using together into 1 dataframe
+combined_data_frames <- lapply(city_names, function(city_name) {
+  get(paste(city_name, "_combined", sep = ""))
+})
+
+# Merge all the data frames in the list into one
+final_combined_data <- do.call(bind_rows, combined_data_frames)
 
 
 
