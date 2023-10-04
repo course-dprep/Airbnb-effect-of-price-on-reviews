@@ -1,3 +1,5 @@
+## inspirational file, delete after finishing project ###
+
 ```{r}
 ## installing all necessary packages
 install.packages("tidyverse")
