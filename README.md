@@ -22,7 +22,7 @@ In this research, we have selected 5 capitals from western European countries. T
 * Paris
 
 Two data points are used. The top 100 most expensive and the 100 cheapest private rooms will be further examined in the research.
-
+```
 __Variable types__
 
 | Variable     | Description      | Data class     |
@@ -32,6 +32,7 @@ __Variable types__
 | Date          | June 2023 & December 2022         | Date  |
 | Room type          | single room         | character  |
 
+```
 
 ##  Type of analysis
 The type of analysis that is used in this paper *Needs to be done*
