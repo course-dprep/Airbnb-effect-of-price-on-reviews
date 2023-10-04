@@ -25,12 +25,12 @@ Two data points are used. The top 100 most expensive and the 100 cheapest privat
 ```
 __Variable types__
 
-| Variable     | Description      | Data class     |
-| ------------- | ------------- | -------- |
-| City          | City of observation         | character  |
-| Price          | Listing price of room per night         | numeric  |
-| Date          | June 2023 & December 2022         | Date  |
-| Room type          | single room         | character  |
+| Variable     | Description                       | Data class     
+| -------------| ----------------------------------| ------------
+| City         | City of observation               | character  
+| Price        | Listing price of room per night   | numeric  
+| Date         | June 2023 & December 2022         | Date  
+| Room type    | single room                       | character  
 
 ```
 
