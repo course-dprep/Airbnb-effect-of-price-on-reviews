@@ -41,6 +41,7 @@ The type of analysis that is used in this paper *Needs to be done*
 - 2
 - 3
 
+'''
   # Structure of the repository
   ├── data
   ├── gen
@@ -54,6 +55,7 @@ The type of analysis that is used in this paper *Needs to be done*
 ├── .gitignore
 ├── README.md
 ├── makefile
+'''
 
 # Example of workflow research reproduction
 
