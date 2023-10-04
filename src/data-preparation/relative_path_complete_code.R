@@ -80,8 +80,7 @@ for (city_name in city_names) {
   cat("Sorted data by price and sliced top and bottom 100 listings in", city_name, "by price\n")
 }
 
-
-
+summarise results
 
 
 
