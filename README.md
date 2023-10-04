@@ -5,7 +5,7 @@
 
 
 # Project description
-Leaving a review and sharing it with the world wide web is only a matter of seconds. The rise of the internet gave room for leaving reviews about anything, anywhere, very easily. Whereas a few decades a go people relied more on word of mouth and written reviews in papers, nowadays we have access to millions of reviews in just a few mouse clicks.
+Leaving a review and sharing it with the world wide web is only a matter of seconds. The rise of the internet gave room for leaving reviews about anything, anywhere, very easily. Whereas a few decades ago people relied more on word of mouth and written reviews in papers, nowadays we have access to millions of reviews in just a few mouse clicks.
 
 We are curious whether the amount of reviews is higher for the top 100 most expensive private room compared to the bottom top 100 least expensive private rooms. The reasoning is that people who book expensive rooms want to know that their rooms is from high quality and thus higher value lots of reviews. However, people who stay at budget Airbnb's are maybe more critical of booking a place with more reviews. In order to gain a deeper understanding of the amount of reviews of private rooms on the most expensive and least expensive Airbnb's we will conduct a research. We will atempt to answer the following question:
 
