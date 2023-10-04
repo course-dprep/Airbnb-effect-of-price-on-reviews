@@ -8,7 +8,8 @@ library(dplyr)
 
 #download data
 library(readr)
-
+library(dplyr)
+library(tidyverse)
 # Define the list of city URLs
 citys <- list(
   amsterdam = "http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2023-09-03/visualisations/listings.csv",
@@ -80,10 +81,50 @@ for (city_name in city_names) {
   cat("Sorted data by price and sliced top and bottom 100 listings in", city_name, "by price\n")
 }
 
-summarise results
+# Loop through the city names
+for (city_name in city_names) {
+  # Access the combined data frame for the current city
+  combined_df <- get(paste(city_name, "_combined", sep = ""))
+  
+  # Add the 'is_expensive' column based on row number
+  combined_df <- combined_df %>%
+    mutate(is_expensive = ifelse(row_number() <= 100, 1, 0))
+  
+  # Assign the modified data frame back to its original name
+  assign(paste(city_name, "_combined", sep = ""), combined_df)
+  
+  # Print a message to indicate completion
+  cat("Created 'is_expensive' variable in", city_name, "combined data frame\n")
+}
 
 
 
+
+
+
+
+# Create an empty list to store the summary data for each city
+summary_list <- list()
+
+# Loop through the city names
+for (city_name in city_names) {
+  # Access the combined data frame for the current city
+  combined_df <- get(paste(city_name, "_combined", sep = ""))
+  
+  # Calculate the average reviews per is_expensive variable
+  summary_data <- combined_df %>%
+    group_by(is_expensive) %>%
+    summarise(
+      Average_Reviews = mean(reviews_per_month, na.rm = TRUE)
+    )
+  
+  # Store the summary data in the list
+  summary_list[[city_name]] <- summary_data
+  
+  # Print the summary for the current city
+  cat("Summary for", city_name, ":\n")
+  print(summary_data)
+}
 
 
 
