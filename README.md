@@ -1,5 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11725981&assignment_repo_type=AssignmentRepo)
-# The impact of reviews on the top 100 most expensive and least expensive single rooms of Airbnb
+# The impact of reviews on the 100 most expensive and 100 least expensive private rooms of Airbnb
 
 ![image](https://github.com/course-dprep/team-project-data-prep-team-10/assets/143409405/4b4503f3-bea1-4c63-bd7a-988ae92ec1b5)
 
@@ -7,7 +7,7 @@
 # Project description
 Leaving a review and sharing it with the world wide web is only a matter of seconds. The rise of the internet gave room for leaving reviews about anything, anywhere, very easily. Whereas a few decades a go people relied more on word of mouth and written reviews in papers, nowadays we have access to millions of reviews in just a few mouse clicks.
 
-We are curious whether the amount of reviews is higher for the top 100 most expensive single room compared to the bottom top 100 least expensive single rooms. The reasoning is that people who book expensive rooms want to know that their rooms is from high quality and thus higher value lots of reviews. However, people who stay at budget Airbnb's are maybe more critical of booking a place with more reviews. In order to gain a deeper understanding of the amount of reviews of single rooms on the most expensive and least expensive Airbnb's we will conduct a research. We will atempt to answer the following question:
+We are curious whether the amount of reviews is higher for the top 100 most expensive private room compared to the bottom top 100 least expensive private rooms. The reasoning is that people who book expensive rooms want to know that their rooms is from high quality and thus higher value lots of reviews. However, people who stay at budget Airbnb's are maybe more critical of booking a place with more reviews. In order to gain a deeper understanding of the amount of reviews of private rooms on the most expensive and least expensive Airbnb's we will conduct a research. We will atempt to answer the following question:
 
 __"To what extent do the 100 most expensive private rooms get more reviews than the 100 cheapest private rooms compared across 5 Western-European capitals (Amsterdam, Berlin, Brussels, London, Paris) on a semi-annual time base? An analysis of multiple cities and time-frames."__ *are we doing a cross country analysis or just all expensive vs all cheap rooms?*
 
@@ -30,7 +30,7 @@ __Variable types__
 | City         | City of observation               | character  
 | Price        | Listing price of room per night   | numeric  
 | Date         | June 2023 & December 2022         | Date  
-| Room type    | single room                       | character  
+| Room type    | private room                       | character  
 
 ```
 
