@@ -9,7 +9,7 @@ Leaving a review and sharing it with the world wide web is only a matter of seco
 
 We are curious whether the amount of reviews is higher for the top 100 most expensive private room compared to the bottom top 100 least expensive private rooms. The reasoning is that people who book expensive rooms want to know that their rooms is from high quality and thus higher value lots of reviews. However, people who stay at budget Airbnb's are maybe more critical of booking a place with more reviews. In order to gain a deeper understanding of the amount of reviews of private rooms on the most expensive and least expensive Airbnb's we will conduct a research. We will atempt to answer the following question:
 
-__"To what extent do the 100 most expensive private rooms get more reviews than the 100 cheapest private rooms compared across 5 Western-European capitals (Amsterdam, Berlin, Brussels, London, Paris) on a semi-annual time base? An analysis of multiple cities and time-frames."__ *are we doing a cross country analysis or just all expensive vs all cheap rooms?*
+__"To what extent do the 100 most expensive private rooms get more reviews than the 100 cheapest private rooms compared across 5 Western-European capitals (Amsterdam, Berlin, Brussels, London, Paris) on an annual time base? An analysis of multiple cities and time-frames."__ *are we doing a cross country analysis or just all expensive vs all cheap rooms?*
 
 # Analysis
 The importance of considering the pricing on reviews is to gain a better understanding of the relationship between reviews and pricing of housing. The research method chosen is ....
