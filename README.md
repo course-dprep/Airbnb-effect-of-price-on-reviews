@@ -21,7 +21,7 @@ In this research, we have selected 5 capitals from western European countries. T
 * London
 * Paris
 
-Two data points are used. The top 100 most expensive and the 100 cheapest single rooms will be further examined in the research.
+Two data points are used. The top 100 most expensive and the 100 cheapest private rooms will be further examined in the research.
 
 __Variable types__
 
