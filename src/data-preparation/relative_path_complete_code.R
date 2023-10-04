@@ -88,7 +88,7 @@ for (city_name in city_names) {
   
   # Add the 'is_expensive' column based on row number
   combined_df <- combined_df %>%
-    mutate(is_expensive = ifelse(row_number() <= 100, 1, 0))
+    mutate(is_expensive = ifelse(row_number() <= 100, 0, 1))
   
   # Assign the modified data frame back to its original name
   assign(paste(city_name, "_combined", sep = ""), combined_df)
@@ -115,7 +115,7 @@ for (city_name in city_names) {
   summary_data <- combined_df %>%
     group_by(is_expensive) %>%
     summarise(
-      Average_Reviews = mean(reviews_per_month, na.rm = TRUE)
+      Average_Reviews = mean(number_of_reviews, na.rm = TRUE)
     )
   
   # Store the summary data in the list
