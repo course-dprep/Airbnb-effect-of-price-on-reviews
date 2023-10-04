@@ -21,10 +21,7 @@ In this research, we have selected 5 capitals from western European countries. T
 * London
 * Paris
 
-Two data points are used. The data is recent data from 2022 & 2023 and from two different seasons: summer and winter. The data used is semi-annual based data:
-* June 2023
-* December 2022
-*is this still relevant?* 
+Two data points are used. The top 100 most expensive and the 100 cheapest single rooms will be further examined in the research.
 
 __Variable types__
 
@@ -44,9 +41,10 @@ The type of analysis that is used in this paper *Needs to be done*
 - 2
 - 3
 
+```
   # Structure of the repository
   ├── data
-├── gen
+  ├── gen
    ├── analysis
    ├── data-preparation
    └── paper
@@ -57,6 +55,7 @@ The type of analysis that is used in this paper *Needs to be done*
 ├── .gitignore
 ├── README.md
 ├── makefile
+```
 
 # Example of workflow research reproduction
 
@@ -67,9 +66,9 @@ The type of analysis that is used in this paper *Needs to be done*
 
 # Notes
 
-# Authors *Add SNR*
+# Authors 
 This repository is developed by team 10 for the course Skills: Data Preperation & Workflow Management (Fall) under supervision of Hannes Datta. This course belongs to the marketing program Marketing Analytics of Tilburg School of Economics and Management. The team consists of the following members:
-* Max Baaten
-* Denise Baltus
-* Rick Massuger
-* Sjuul Visschers
+* Max Baaten (2042023)
+* Denise Baltus (2063487)
+* Rick Massuger (2036529)
+* Sjuul Visschers (2049560)
