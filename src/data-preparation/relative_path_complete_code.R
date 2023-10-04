@@ -84,16 +84,6 @@ for (city_name in city_names) {
 
 
 
-#code that combines all subsets we are using together into 1 dataframe
-combined_data_frames <- lapply(city_names, function(city_name) {
-  get(paste(city_name, "_combined", sep = ""))
-})
-
-# Merge all the data frames in the list into one
-final_combined_data <- do.call(bind_rows, combined_data_frames)
-
-
-
 
 
 
