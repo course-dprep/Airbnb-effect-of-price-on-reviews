@@ -4,12 +4,11 @@ install.packages("tidyverse")
 library(tidyverse)
 install.packages("dplyr")
 library(dplyr)
-# Rest van je code...
-
-
 
 #download data
 library(readr)
+library(dplyr)
+library(tidyverse)
 
 # Define the list of city URLs
 citys <- list(
