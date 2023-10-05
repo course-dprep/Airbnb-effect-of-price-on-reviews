@@ -30,15 +30,10 @@ for (city_name in names(citys)) {
   cat("Downloaded data for", city_name, "\n")
 }
 
-
-
-
-
 # Now, you should have separate data frames named amsterdam, berlin, brussels, london, and paris.
 
 #code for private rooms segmentation
 city_names <- names(citys)
-
 
 # Loop through the city names and filter the corresponding data frames
 for (city_name in city_names) {
@@ -50,13 +45,6 @@ for (city_name in city_names) {
   # Print a message to indicate completion
   cat("Filtered data for Private rooms in", city_name, "\n")
 }
-
-
-
-
-
-
-
 
 #slice the top and bottom 100 listings by price for each city
 
@@ -96,12 +84,6 @@ for (city_name in city_names) {
   # Print a message to indicate completion
   cat("Created 'is_expensive' variable in", city_name, "combined data frame\n")
 }
-
-
-
-
-
-
 
 # Create an empty list to store the summary data for each city
 summary_list <- list()
