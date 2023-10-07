@@ -118,24 +118,31 @@ for (city_name in city_names) {
 library(ggplot2)
 library(dplyr)
 
+# Create a directory to store the plots
+dir.create("barcharts")
+
 # Loop through the city names
 for (city_name in city_names) {
   # Access the summary data for the current city
   summary_data <- get(paste(city_name, "_avg_reviews", sep = ""))
   
-  # Create a scatterplot comparing 2022 vs. 2023 for the current city
-  ggplot(summary_data, aes(x = Average_Reviews_yearly, y = as.factor(is_expensive), color = as.factor(is_expensive))) +
-    geom_point() +
-    labs(title = paste("Average Reviews Yearly Scatterplot in", city_name, "(2022 vs. 2023)"),
-         x = "Average Reviews Yearly", y = "Is Expensive") +
-    scale_color_manual(values = c("0" = "blue", "1" = "red"), name = "Is Expensive") +
-    theme_minimal()
+  # Create a bar chart comparing 2022 vs. 2023 for the current city
+  barchart <- ggplot(summary_data, aes(x = as.factor(is_expensive), y = Average_Reviews_yearly, fill = as.factor(is_expensive))) +
+    geom_bar(stat = "identity", position = "dodge") +
+    labs(title = paste("Average Reviews Yearly Comparison in", city_name, "(2022 vs. 2023)"),
+         x = "Is Expensive", y = "Average Reviews Yearly") +
+    scale_fill_manual(values = c("0" = "blue", "1" = "red"), name = "Is Expensive") +
+    theme_minimal() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x-axis labels for better readability
+  
+  # Save the bar chart as a PNG file
+  filename <- paste("barcharts/", city_name, "_barchart.png", sep = "")
+  ggsave(filename, plot = barchart, width = 6, height = 4)
   
   # Print a message to indicate completion
-  cat("Created scatterplot for", city_name, "\n")
-  print(plot)
-  
+  cat("Created bar chart for", city_name, "and saved as", filename, "\n")
 }
+
 
  
 
