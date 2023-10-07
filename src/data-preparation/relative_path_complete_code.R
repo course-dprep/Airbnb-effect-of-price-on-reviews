@@ -11,17 +11,22 @@ library(readr)
 library(dplyr)
 library(tidyverse)
 # Define the list of city URLs
-citys <- list(
-  amsterdam = "http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2023-09-03/visualisations/listings.csv",
-  berlin = "http://data.insideairbnb.com/germany/be/berlin/2023-06-22/visualisations/listings.csv",
-  brussels = "http://data.insideairbnb.com/belgium/bru/brussels/2023-06-24/visualisations/listings.csv",
-  london = "http://data.insideairbnb.com/united-kingdom/england/london/2023-06-08/visualisations/listings.csv",
-  paris = "http://data.insideairbnb.com/france/ile-de-france/paris/2023-06-06/visualisations/listings.csv"
+city_year <- list(
+  amsterdam_2022 = "http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-12-05/visualisations/listings.csv",
+  berlin_2022 = "http://data.insideairbnb.com/germany/be/berlin/2022-12-21/visualisations/listings.csv",
+  brussels_2022 = "http://data.insideairbnb.com/belgium/bru/brussels/2022-12-24/visualisations/listings.csv",
+  london_2022 = "http://data.insideairbnb.com/united-kingdom/england/london/2022-12-10/visualisations/listings.csv",
+  paris_2022 = "http://data.insideairbnb.com/france/ile-de-france/paris/2022-12-10/visualisations/listings.csv",
+  amsterdam_2023 = "http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2023-06-05/visualisations/listings.csv",
+  berlin_2023 = "http://data.insideairbnb.com/germany/be/berlin/2023-06-22/visualisations/listings.csv",
+  brussels_2023 = "http://data.insideairbnb.com/belgium/bru/brussels/2023-06-24/visualisations/listings.csv",
+  london_2023 = "http://data.insideairbnb.com/united-kingdom/england/london/2023-06-08/visualisations/listings.csv",
+  paris_2023 = "http://data.insideairbnb.com/france/ile-de-france/paris/2023-06-06/visualisations/listings.csv"
 )
 
 # Loop through the city URLs and create data frames
-for (city_name in names(citys)) {
-  url <- citys[[city_name]]
+for (city_name in names(city_year)) {
+  url <- city_year[[city_name]]
   
   # Read the CSV data from the URL and store it in a data frame with the city name
   assign(city_name, read.csv(url))
@@ -33,7 +38,7 @@ for (city_name in names(citys)) {
 # Now, you should have separate data frames named amsterdam, berlin, brussels, london, and paris.
 
 #code for private rooms segmentation
-city_names <- names(citys)
+city_names <- names(city_year)
 
 # Loop through the city names and filter the corresponding data frames
 for (city_name in city_names) {
@@ -97,18 +102,42 @@ for (city_name in city_names) {
   summary_data <- combined_df %>%
     group_by(is_expensive) %>%
     summarise(
-      Average_Reviews = mean(number_of_reviews, na.rm = TRUE)
+      Average_Reviews_yearly = mean(number_of_reviews_ltm, na.rm = TRUE)
     )
   
   # Store the summary data in the list
   summary_list[[city_name]] <- summary_data
-  
+  assign(paste(city_name, "_avg_reviews", sep = ""), summary_data)
   # Print the summary for the current city
   cat("Summary for", city_name, ":\n")
   print(summary_data)
 }
 
 
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+
+# Loop through the city names
+for (city_name in city_names) {
+  # Access the summary data for the current city
+  summary_data <- get(paste(city_name, "_avg_reviews", sep = ""))
+  
+  # Create a scatterplot comparing 2022 vs. 2023 for the current city
+  ggplot(summary_data, aes(x = Average_Reviews_yearly, y = as.factor(is_expensive), color = as.factor(is_expensive))) +
+    geom_point() +
+    labs(title = paste("Average Reviews Yearly Scatterplot in", city_name, "(2022 vs. 2023)"),
+         x = "Average Reviews Yearly", y = "Is Expensive") +
+    scale_color_manual(values = c("0" = "blue", "1" = "red"), name = "Is Expensive") +
+    theme_minimal()
+  
+  # Print a message to indicate completion
+  cat("Created scatterplot for", city_name, "\n")
+  print(plot)
+  
+}
+
+ 
 
 
 
