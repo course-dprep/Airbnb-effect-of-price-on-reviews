@@ -4,13 +4,13 @@
 _"To what extent do the 100 most expensive private rooms get more reviews than the 100 cheapest private rooms compared across 5 Western-European capitals (Amsterdam, Berlin, Brussels, London, Paris) on an annual time base? An analysis of multiple cities and time-frames."_
 
 # Project Motivation 
-<img src="https://github.com/course-dprep/team-project-data-prep-team-10/assets/143409405/4b4503f3-bea1-4c63-bd7a-988ae92ec1b5?raw=true" alt="Alternatieve tekst" height="130">
+<div style="float: right; margin: 0px 0px 10px 10px;">
+  <img src="https://github.com/course-dprep/team-project-data-prep-team-10/assets/143409405/4b4503f3-bea1-4c63-bd7a-988ae92ec1b5?raw=true" alt="Alternatieve tekst" height="130">
+</div>
 
 Leaving a review and sharing it with the world wide web is only a matter of seconds. The rise of the internet gave room for leaving reviews about anything, anywhere, very easily. Whereas a few decades ago people relied more on word of mouth and written reviews in papers, nowadays we have access to millions of reviews in just a few mouse clicks.
 
-We are curious whether the amount of reviews is higher for the top 100 most expensive private room compared to the bottom top 100 least expensive private rooms. The reasoning is that people who book expensive rooms want to know that their rooms is from high quality and thus higher value lots of reviews. However, people who stay at budget Airbnb's are maybe more critical of booking a place with more reviews. In order to gain a deeper understanding of the amount of reviews of private rooms on the most expensive and least expensive Airbnb's we will conduct a research. Due to the lack of accessibility of more required data we will simulate this research with fewer data input than desired. Hence, we will compare 2 years worth of reviews and analyze the findings with a linear regression. We will atempt to answer the following question:
-
-__"To what extent do the 100 most expensive private rooms get more reviews than the 100 cheapest private rooms compared across 5 Western-European capitals (Amsterdam, Berlin, Brussels, London, Paris) on an annual time base? An analysis of multiple cities and time-frames."__ 
+We are curious whether the amount of reviews is higher for the top 100 most expensive private room compared to the bottom top 100 least expensive private rooms. The reasoning is that people who book expensive rooms want to know that their rooms is from high quality and thus higher value lots of reviews. However, people who stay at budget Airbnb's are maybe more critical of booking a place with more reviews. In order to gain a deeper understanding of the amount of reviews of private rooms on the most expensive and least expensive Airbnb's we will conduct a research. Due to the unavailability of extensive data, we will conduct the research using a limited datset, which may not meet our desired data volume. Hence, we will compare 2 years worth of reviews and analyze the findings with a linear regression to answer the research question described above.
 
 # Method and Results
 ## Method
