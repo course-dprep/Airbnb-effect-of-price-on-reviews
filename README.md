@@ -55,10 +55,10 @@ By visualizing the data into barcharts we got the following insights. In Amsterd
 └── src
    ├── analysis
    ├── data-preparation
-      ├── Download_Data_Relative
-      ├── Makefile
-      ├── Output_Data_Relative
-      ├── Transform_Data_Relative
+      ├── download_data_relative
+      ├── makefile
+      ├── output_data_relative
+      ├── transform_data_relative
    └── paper
   ├── .gitignore
   ├── README.md
