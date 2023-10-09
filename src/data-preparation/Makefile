@@ -14,7 +14,5 @@ output: Output_Data_Relative.R
 all: download transform output
 
 .PHONY: all download transform output
-	
-clean:
-	R -e "unlink('*.csv')"
+
 	
