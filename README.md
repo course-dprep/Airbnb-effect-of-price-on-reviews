@@ -4,7 +4,7 @@
 _"To what extent do the 100 most expensive private rooms get more yearly reviews than the 100 cheapest private rooms compared across 5 Western-European capitals (Amsterdam, Berlin, Brussels, London, Paris) on an annual time base? An analysis of multiple cities and time-frames."_
 
 # Project Motivation 
-<div style="float: right; margin: 0px 0px 10px 10px;">
+<div style="float: right; margin: 0px 0px 100px 100px;">
   <img src="https://github.com/course-dprep/team-project-data-prep-team-10/assets/143409405/4b4503f3-bea1-4c63-bd7a-988ae92ec1b5?raw=true" alt="Alternatieve tekst" height="130">
 </div>
 
@@ -44,7 +44,8 @@ To adress our research question, we first decided to take a close look at the ou
 ## Results
 After running our code, we figured out that the results were very inconsistent and thus hard to generalize conclusion about the data.
 
-By visualizing the data into barcharts we got the following insights. In Amsterdam the cheap private rooms consitently had more yearly reviews than the expensive rooms. On the other hand, Berlin, London and Paris showed opposite results as the expensive private rooms consistently got more reviews. Our third city Brussels had surprisingly different results, as in 2022 the cheap private rooms got slightly more reviews whereas in 2023 the expensive private rooms got slightly more reviews.
+By visualizing the data into barcharts we got the following insights. In Amsterdam the cheap private rooms consitently had more yearly reviews than the expensive rooms. On the other hand, Berlin, London and Paris showed opposite results as the expensive private rooms consistently got more reviews. For the city of Brussels the results were surprisingly different, as in 2022 the cheap private rooms got slightly more reviews whereas in 2023 the expensive private rooms got slightly more reviews. Therefore, it at first glance seems that expensive private rooms are getting more reviews. However, this finding is only consistent for 3 out of the 5 cities and thus further research needs to be conducted to gain a deeper understanding of the effects of the amount of yearly reviews and the pricing of private rooms.
+
 # Repository Overview
 ```
  
@@ -66,7 +67,7 @@ By visualizing the data into barcharts we got the following insights. In Amsterd
 ├── makefile
 ```
 # Dependencies
-For a smooth execution of the project, follow the installation guides on https://tilburgsciencehub.com
+For a smooth execution of the project, follow the installation guides on [Tilburg Science Hub](https://tilburgsciencehub.com)
 * R
     * [Installing R](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/r/)
 * Make
@@ -91,7 +92,7 @@ For a smooth execution of the project, follow the installation guides on https:/
   3. ../src/data-preparation -> Output_Data_Relative.R
 
 # Resources
-* Insideairbnb (http://insideairbnb.com/get-the-data/)
+* [Insideairbnb](http://insideairbnb.com/get-the-data/)
 
 # Authors 
 This repository is developed by team 10 for the course Skills: Data Preperation & Workflow Management (Fall) under supervision of Hannes Datta. This course belongs to the marketing program Marketing Analytics of Tilburg School of Economics and Management. The team consists of the following members:
