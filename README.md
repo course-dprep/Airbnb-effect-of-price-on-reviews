@@ -79,7 +79,7 @@ For a smooth execution of the project, follow the installation guides on [Tilbur
 * Running the code by using Make
   1. Fork this repository
   2. Open your terminal and run the following code
-   ``` git clone https://github.com/{your username}/team-project-data-prep-team-10.git ````
+   ``` git clone https://github.com/{your username}/team-project-data-prep-team-10.git ```
   4. Make will run all the code and will generate a jpng file with the barchart results of the analysis
   5. Ensure that the pipeline is cleaned of all unnecessary data files, running the following code in the terminal:
      ``` make clean```
