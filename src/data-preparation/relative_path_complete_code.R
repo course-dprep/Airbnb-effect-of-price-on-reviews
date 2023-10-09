@@ -5,11 +5,11 @@ library(tidyverse)
 install.packages("dplyr")
 library(dplyr)
 
-
 #download data
 library(readr)
 library(dplyr)
 library(tidyverse)
+
 # Define the list of city URLs
 city_year <- list(
   amsterdam_2022 = "http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-12-05/visualisations/listings.csv",
