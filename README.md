@@ -67,11 +67,11 @@ By visualizing the data into barcharts we got the following insights. In Amsterd
 # Dependencies
 For a smooth execution of the project, follow the installation guides on [Tilburg Science Hub](https://tilburgsciencehub.com)
 * R
-    * [Installing R](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/r/)
+    * [Setting up R and R studio](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/r/)
 * Make
-    * [Installing Make](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/make/)
+    * [Setting up Make](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/make/)
  * Github
-     * [Set up Git and Github](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/git/)
+     * [Setting up Git and Github](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/git/)
 
 # Example of workflow research reproduction
 
