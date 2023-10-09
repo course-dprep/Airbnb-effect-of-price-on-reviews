@@ -1,4 +1,5 @@
 #Set up
+options(repos = "https://cloud.r-project.org")
 install.packages("tidyverse")
 library(tidyverse)
 install.packages("ggplot2")
