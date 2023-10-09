@@ -60,9 +60,9 @@ By visualizing the data into barcharts we got the following insights. In Amsterd
       ├── Output_Data_Relative
       ├── Transform_Data_Relative
    └── paper
-├── .gitignore
-├── README.md
-├── makefile
+  ├── .gitignore
+  ├── README.md
+  ├── makefile
 ```
 # Dependencies
 For a smooth execution of the project, follow the installation guides on [Tilburg Science Hub](https://tilburgsciencehub.com)
@@ -74,8 +74,6 @@ For a smooth execution of the project, follow the installation guides on [Tilbur
      * [Setting up Git and Github](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/git/)
 
 # Example of workflow research reproduction
-
-# How to run the project
 * Running the code by using Make
   1. Fork this repository
   2. Open your terminal and run the following code
