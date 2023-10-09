@@ -1,7 +1,7 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11725981&assignment_repo_type=AssignmentRepo)
 # The impact of price on reviews for the 100 most expensive and 100 least expensive private rooms of Airbnb
 
-_"To what extent do the 100 most expensive private rooms get more reviews than the 100 cheapest private rooms compared across 5 Western-European capitals (Amsterdam, Berlin, Brussels, London, Paris) on an annual time base? An analysis of multiple cities and time-frames."_
+_"To what extent do the 100 most expensive private rooms get more yearly reviews than the 100 cheapest private rooms compared across 5 Western-European capitals (Amsterdam, Berlin, Brussels, London, Paris) on an annual time base? An analysis of multiple cities and time-frames."_
 
 # Project Motivation 
 <div style="float: right; margin: 0px 0px 10px 10px;">
@@ -10,11 +10,11 @@ _"To what extent do the 100 most expensive private rooms get more reviews than t
 
 Leaving a review and sharing it with the world wide web is only a matter of seconds. The rise of the internet gave room for leaving reviews about anything, anywhere, very easily. Whereas a few decades ago people relied more on word of mouth and written reviews in papers, nowadays we have access to millions of reviews in just a few mouse clicks.
 
-We are curious whether the amount of reviews is higher for the top 100 most expensive private room compared to the bottom top 100 least expensive private rooms. The reasoning is that people who book expensive rooms want to know that their rooms is from high quality and thus higher value lots of reviews. However, people who stay at budget Airbnb's are maybe more critical of booking a place with more reviews. In order to gain a deeper understanding of the amount of reviews of private rooms on the most expensive and least expensive Airbnb's we will conduct a research. Due to the unavailability of extensive data, we will conduct the research using a limited datset, which may not meet our desired data volume. Hence, we will compare 2 years worth of reviews and analyze the findings with a linear regression to answer the research question described above.
+We are curious whether the amount of reviews is higher for the top 100 most expensive private room compared to the bottom top 100 least expensive private rooms. The reasoning is that people who book expensive rooms want to know that their rooms is from high quality and thus higher value lots of reviews. However, people who stay at budget Airbnb's are maybe more critical of booking a place with more reviews. In order to gain a deeper understanding of the amount of reviews of private rooms on the most expensive and least expensive Airbnb's we will conduct a research. Due to the unavailability of extensive data, we will conduct the research using a limited datset, which may not meet our desired data volume. Hence, we will compare 2 years worth of reviews and analyze the findings to answer the research question described above.
 
 # Method and Results
 ## Method
-The importance of considering the pricing on reviews is to gain a better understanding of the relationship between reviews and pricing of housing. The research method chosen is ....
+The importance of considering the pricing on reviews is to gain a better understanding of the relationship between the yearly reviews and pricing of housing. The research method chosen is an analysis of the ouput of the available data in 5 citites in 2022 and 2023 on Airbnb. The 2 categories are coded as the 100 cheapest private rooms (0) and the 100 most expensive private rooms (1).
 
 In this research, we have selected 5 capitals from western European countries. The reason for this is that those cities are most likely to have similar circumstances and thus will provide a solid background to research the question. The five selected cities are:
 * Amsterdam
@@ -39,12 +39,12 @@ The following variable types are used in our research:
 ```
 
 ##  Type of analysis
-To adress our research question, we first decided to take a close look at the output of our code. After which we will run a linear regression on the chosen variables. The dependent variable in this research is the amount of reviews that a private rooms has received and the independent variable is the price of the private room. We decided on adding 5 different cities to see if the location might also have an affect. By adding a control variable, the aim is to get a better understanding of the effect.
+To adress our research question, we first decided to take a close look at the output of our code. After which we will create barcharts the chosen variables. The dependent variable in this research is the amount of reviews that a private rooms has received and the independent variable is the price of the private room. We decided on adding 5 different cities to see if the location might also have an affect. By adding a control variable, the aim is to get a better understanding of the effect.
 
 ## Results
 After running our code, we figured out that the results were very inconsistent and thus hard to generalize conclusion about the data.
 
-However, we also ran the linear regression and this gave us the following insights:
+By visualizing the data into barcharts we got the following insights. In Amsterdam the cheap private rooms consitently had more yearly reviews than the expensive rooms. On the other hand, Berlin, London and Paris showed opposite results as the expensive private rooms consistently got more reviews. Our third city Brussels had surprisingly different results, as in 2022 the cheap private rooms got slightly more reviews whereas in 2023 the expensive private rooms got slightly more reviews.
 # Repository Overview
 ```
  
@@ -56,6 +56,10 @@ However, we also ran the linear regression and this gave us the following insigh
 └── src
    ├── analysis
    ├── data-preparation
+      ├── Download_Data_Relative
+      ├── Makefile
+      ├── Output_Data_Relative
+      ├── Transform_Data_Relative
    └── paper
 ├── .gitignore
 ├── README.md
@@ -64,9 +68,11 @@ However, we also ran the linear regression and this gave us the following insigh
 # Dependencies
 For a smooth execution of the project, follow the installation guides on https://tilburgsciencehub.com
 * R
-    * https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/r/
+    * [Installing R](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/r/)
 * Make
-    * https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/make/
+    * [Installing Make](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/make/)
+ * Github
+     * [Set up Git and Github](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/git/)
 
 # Example of workflow research reproduction
 
@@ -84,12 +90,8 @@ For a smooth execution of the project, follow the installation guides on https:/
   2. ../src/data-preparation -> Transform_Data_Relative.R
   3. ../src/data-preparation -> Output_Data_Relative.R
 
-
-
 # Resources
 * Insideairbnb (http://insideairbnb.com/get-the-data/)
-
-# Notes
 
 # Authors 
 This repository is developed by team 10 for the course Skills: Data Preperation & Workflow Management (Fall) under supervision of Hannes Datta. This course belongs to the marketing program Marketing Analytics of Tilburg School of Economics and Management. The team consists of the following members:
