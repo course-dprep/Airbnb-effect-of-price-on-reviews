@@ -18,7 +18,6 @@ city_year <- list(
   paris_2023 = "http://data.insideairbnb.com/france/ile-de-france/paris/2023-06-06/visualisations/listings.csv"
 )
 
-
 # Loop through the city URLs and create data frames
 for (city_name in names(city_year)) {
   url <- city_year[[city_name]]
