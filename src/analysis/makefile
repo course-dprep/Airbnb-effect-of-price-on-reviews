@@ -1,7 +1,10 @@
-OUTPUT = ../../gen/data-preparation/output
+TEMP = ../../gen/data-preparation/temp
 ANALYSIS = ../../gen/analysis/output
 
-all: $(ANALYSIS)/barcharts.pdf
+all: $(ANALYSIS)/barcharts/
 
-$(ANALYSIS)/barcharts.pdf: $(OUTPUT)/data_cleaned.csv Output_Data_Relative.R
+$(ANALYSIS)/barcharts: $(TEMP)/data_cleaned.csv Output_Data_Relative.R
 	R --vanilla < Output_Data_Relative.R
+
+
+
