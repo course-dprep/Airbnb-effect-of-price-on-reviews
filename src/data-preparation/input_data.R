@@ -1,14 +1,8 @@
 ## installing all necessary packages
-options(repos = "https://cloud.r-project.org")
-install.packages("tidyverse")
 library(tidyverse)
-install.packages("dplyr")
 library(dplyr)
-
-#download data
 library(readr)
-library(dplyr)
-library(tidyverse)
+
 # Define the list of city URLs
 city_year <- list(
   amsterdam_2022 = "http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-12-05/visualisations/listings.csv",
@@ -40,7 +34,7 @@ all_data <- bind_rows(
   amsterdam_2023, berlin_2023, brussels_2023, london_2023, paris_2023
 )
 
-# Specify the directory where you want to save the CSV file
+# Specify the directory where to save the CSV file
 output_directory <- "../../gen/data-preparation/temp/"
 
 # Save the combined data frame as data_framed.csv

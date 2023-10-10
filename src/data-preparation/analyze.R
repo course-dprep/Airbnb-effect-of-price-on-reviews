@@ -1,4 +1,4 @@
-#Set up
+# Set up
 options(repos = "https://cloud.r-project.org")
 library(tidyverse)
 library(ggplot2)
@@ -18,6 +18,15 @@ city_year <- list(
   paris_2023 = "http://data.insideairbnb.com/france/ile-de-france/paris/2023-06-06/visualisations/listings.csv"
 )
 
+# Create a directory to store the plots
+dir.create("barcharts")
+
+# Create a directory to store the summary data
+dir.create("summary_data")
+
+# Create an empty list to store the summary data for each city
+summary_list <- list()
+
 # Loop through the city URLs and create data frames
 for (city_name in names(city_year)) {
   url <- city_year[[city_name]]
@@ -26,14 +35,14 @@ for (city_name in names(city_year)) {
   assign(city_name, read.csv(url))
 }
 
-#code for private rooms segmentation
+# Code for private rooms segmentation
 city_names <- names(city_year)
 
 # Loop through the city names and filter the corresponding data frames
 for (city_name in city_names) {
   # Filter the data frame for "Private room" listings
   assign(paste(city_name, "_private_rooms", sep = ""), 
-         get(city_name) %>%  # Access the original data frame by name
+         get(city_name) %>%  
            filter(room_type == "Private room"))
   
   # Print a message to indicate completion
@@ -44,25 +53,22 @@ for (city_name in city_names) {
 for (city_name in city_names) {
   # Access the data frame for private rooms in the current city
   city_df <- get(paste(city_name, "_private_rooms", sep = ""))
-
-# Sort the data frame by the "price" column in ascending order
-sorted_df <- city_df %>% arrange(price)
-
-# Create data frame for the combined 100 cheapest and 100 most expensive listings
-combined_df <- bind_rows(
-  head(sorted_df, 100),  # Top 100 most expensive listings
-  tail(sorted_df, 100)   # Bottom 100 cheapest listings
-)
-
-# Assign the combined data frame a unique name for each city
-assign(paste(city_name, "_combined", sep = ""), combined_df)
-
+  
+  # Sort the data frame by the "price" column in ascending order
+  sorted_df <- city_df %>% arrange(price)
+  
+  # Create data frame for the combined 100 cheapest and 100 most expensive listings
+  combined_df <- bind_rows(
+    head(sorted_df, 100),  
+    tail(sorted_df, 100)   
+  )
+  
+  # Assign the combined data frame a unique name for each city
+  assign(paste(city_name, "_combined", sep = ""), combined_df)
+  
   # Print a message to indicate completion
-  cat("Created 'is_expensive' variable in", city_name, "combined data frame\n")
+  cat("Sorted data by price and sliced top and bottom 100 listings in", city_name, "by price\n")
 }
-
-# Create an empty list to store the summary data for each city
-summary_list <- list()
 
 # Loop through the city names
 for (city_name in city_names) {
@@ -73,42 +79,15 @@ for (city_name in city_names) {
   combined_df <- combined_df %>%
     mutate(is_expensive = ifelse(row_number() <= 100, 0, 1))
   
-  # Calculate the average reviews per is_expensive variable
-  summary_data <- combined_df %>%
-    group_by(is_expensive) %>%
-    summarise(
-      Average_Reviews_yearly = mean(number_of_reviews_ltm, na.rm = TRUE)
-    )
-  
-  # Store the summary data in the list
-  summary_list[[city_name]] <- summary_data
-  assign(paste(city_name, "_avg_reviews", sep = ""), summary_data)
-  # Print the summary for the current city
-  cat("Summary for", city_name, ":\n")
-  print(summary_data)
-}
-
-# Create a directory to store the plots
-dir.create("barcharts")
-
-# Loop through the city names
-for (city_name in city_names) {
-  # Access the summary data for the current city
-  summary_data <- get(paste(city_name, "_avg_reviews", sep = ""))
-  
-  # Create a bar chart comparing 2022 vs. 2023 for the current city
-  barchart <- ggplot(summary_data, aes(x = as.factor(is_expensive), y = Average_Reviews_yearly, fill = as.factor(is_expensive))) +
-    geom_bar(stat = "identity", position = "dodge") +
-    labs(title = paste("Average Reviews Yearly Comparison in", city_name, "(2022 vs. 2023)"),
-         x = "Is Expensive", y = "Average Reviews Yearly") +
-    scale_fill_manual(values = c("0" = "blue", "1" = "red"), name = "Is Expensive") +
-    theme_minimal() +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x-axis labels for better readability
-  
-  # Save the bar chart as a PNG file
-  filename <- paste("barcharts/", city_name, "_barchart.png", sep = "")
-  ggsave(filename, plot = barchart, width = 6, height = 4)
+  # Assign the modified data frame back to its original name
+  assign(paste(city_name, "_combined", sep = ""), combined_df)
   
   # Print a message to indicate completion
-  cat("Created bar chart for", city_name, "and saved as", filename, "\n")
+  cat("Created 'is_expensive' variable in", city_name, "combined data frame\n")
+  
+  # Save cleaned data
+  write_csv(combined_df, file = paste("summary_data/", city_name, "_summary.csv", sep = ""))
+  
+  # Print a message to indicate completion
+  cat("Created summary CSV file for", city_name, "and saved as", paste("summary_data/", city_name, "_summary.csv", sep = ""), "\n")
 }
