@@ -1,10 +1,7 @@
 #Set up
 options(repos = "https://cloud.r-project.org")
-install.packages("tidyverse")
 library(tidyverse)
-install.packages("ggplot2")
 library(ggplot2)
-install.packages("dplyr")
 library(dplyr)
 
 # Define the list of city URLs
