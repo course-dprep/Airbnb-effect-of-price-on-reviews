@@ -115,3 +115,5 @@ for (city_name in city_names) {
   # Print a message to indicate completion
   cat("Created bar chart for", city_name, "and saved as", filename, "\n")
 }
+
+write_csv(summary_data,file="../../gen/analysis/output/summary_barcharts.csv")
