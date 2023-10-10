@@ -12,4 +12,3 @@ $(TEMP)/data_framed.csv: input_data.R $(DATA)/listings_amsterdam22.csv $(DATA)/l
 
 $(OUTPUT)/data_cleaned.csv: cleaned_data.R $(TEMP)/data_framed.csv
 	R --vanilla < cleaned_data.R
-
