@@ -7,5 +7,7 @@ analysis: data-preparation
 	make -C src/analysis
 	
 clean:
-	-rm -r data
-	-rm -r gen
+	R -e "unlink(list.files(pattern='*.pdf', recursive=T))"
+	R -e "unlink(list.files(pattern='*.png', recursive=T))"
+	R -e "unlink(list.files(pattern='*.csv', recursive=T))"
+	R -e "unlink('gen', recursive=TRUE)"
