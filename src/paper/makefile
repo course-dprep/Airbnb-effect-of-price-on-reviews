@@ -1,7 +1,12 @@
-all: Presentation.html
+ANALYSIS = ../../gen/analysis/output
+PAPER = ../../gen/paper/output
 
-Presentation.html: Presentation.Rmd
-								quarto render Presentation.Rmd
-								mv Presentation.html ../../
+all: $(PAPER)/descriptives.Rmd
+
+$(PAPER)/descriptives.Rmd: script_to_generate_descriptives.R
+	R --vanilla < script_to_generate_descriptives.R
+
+
+
 
 
