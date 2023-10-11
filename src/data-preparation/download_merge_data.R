@@ -34,7 +34,7 @@ for (city_name in names(city_year)) {
 city_names <- c("amsterdam_2022", "amsterdam_2023", "brussels_2022", "brussels_2023", "paris_2022", "paris_2023", "london_2022", "london_2023", "berlin_2022", "berlin_2023")
 
 # Define a vector of city codes corresponding to the order of city names
-city_codes <- c("AMS", "AMS", "BRU", "BRU", "PAR", "PAR", "LON", "LON", "BER", "BER")
+city_codes <- c("AMS_cheap", "AMS_expensive", "BRU_cheap", "BRU_expensive", "PAR_cheap", "PAR_expensive", "LON_cheap", "LON_expensive", "BER_cheap", "BER_expensive")
 
 for (i in 1:length(city_names)) {
   city_df <- get(city_names[i])
@@ -75,4 +75,4 @@ filtered_df_expensive <- df_framed %>%
   slice_max(order_by = price, n = 100)
 
 cleaned_data_final <- bind_rows(filtered_df_cheap, filtered_df_expensive)
-write.csv(cleaned_data_final, file = "../../gen/data-preparation/temp/data_framed.csv", fileEncoding = "UTF-8",row.names=FALSE )
+write.csv(cleaned_data_final, file = "../../gen/data-preparation/temp/cleaned_data_final.csv", fileEncoding = "UTF-8",row.names=FALSE )
