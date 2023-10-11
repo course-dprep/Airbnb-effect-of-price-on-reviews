@@ -14,4 +14,4 @@ filtered_df_expensive <- df_framed %>%
   slice_max(order_by = price, n = 100)
 
 cleaned_data_final <- bind_rows(filtered_df_cheap, filtered_df_expensive)
-write.csv(cleaned_data_final, file = "../../gen/data-preparation/temp/data_framed.csv", fileEncoding = "UTF-8",row.names=FALSE )
+write.csv(cleaned_data_final, file = "../../gen/data-preparation/temp/cleaned_data_final.csv", fileEncoding = "UTF-8",row.names=FALSE )
