@@ -2,9 +2,7 @@
 library(tidyverse)
 
 # Load the combined data frame
-df_framed <- read_csv("data_framed.csv")
-df_framed <- read_csv(file.path("gen" , "data-preparation", "temp", "data_framed.csv"))
-
+df_framed <- read_csv("../../gen/data-preparation/temp/data_framed.csv")
 
 df_framed<- df_framed%>% filter(room_type == "Private room")
 filtered_df_cheap <- df_framed %>%
