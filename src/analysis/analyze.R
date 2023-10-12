@@ -5,7 +5,7 @@ cleaned_data_final<-read_csv("../../gen/data-preparation/temp/cleaned_data_final
 library(dplyr)
 # Summary for the Cheapest Rooms
 summary_reviews <- cleaned_data_final %>%
-  group_by(city_code) %>%
+  group_by(is_cheap_expensive) %>%
   summarise(
     Average_Reviews_Yearly = mean(number_of_reviews_ltm, na.rm = TRUE)
   )
@@ -19,7 +19,7 @@ city_colors <- c("AMS_cheap" = "skyblue","AMS_expensive" = "skyblue", "BER_cheap
                  "BRU_expensive" = "lightgreen","LON_cheap" = "coral", "LON_expensive" = "coral","PAR_cheap" = "lightblue","PAR_expensive" = "lightblue")
 
 # Create a bar chart for Average Reviews Yearly with custom colors
-bar_chart <- ggplot(summary_reviews, aes(x = city_code, y = Average_Reviews_Yearly, fill = city_code)) +
+bar_chart <- ggplot(summary_reviews, aes(x = is_cheap_expensive, y = Average_Reviews_Yearly, fill = is_cheap_expensive)) +
   geom_bar(stat = "identity", position = position_dodge(width = 14)) +
   labs(title = "Average Reviews Yearly by City",
        x = "City Code",
