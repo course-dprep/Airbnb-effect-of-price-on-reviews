@@ -20,7 +20,7 @@ city_colors <- c("AMS_cheap" = "skyblue","AMS_expensive" = "skyblue", "BER_cheap
 
 # Create a bar chart for Average Reviews Yearly with custom colors
 bar_chart <- ggplot(summary_reviews, aes(x = city_code, y = Average_Reviews_Yearly, fill = city_code)) +
-  geom_bar(stat = "identity") +
+  geom_bar(stat = "identity", position = position_dodge(width = 14)) +
   labs(title = "Average Reviews Yearly by City",
        x = "City Code",
        y = "Average Reviews Yearly") +
@@ -37,7 +37,7 @@ output_directory <- "../../gen/analysis/output"
 output_file <- file.path(output_directory, "bar_chart.png")
 
 # Save the bar chart as a PNG file
-ggsave(output_file, plot = bar_chart, width = 8, height = 6, units = "in")
+ggsave(output_file, plot = bar_chart, width = 14, height = 6, units = "in")
 
 
 
