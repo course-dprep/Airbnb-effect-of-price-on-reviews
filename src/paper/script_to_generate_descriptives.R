@@ -3,12 +3,12 @@ dir.create("../../gen/paper/output")
 # Load necessary libraries
 install.packages("png", repos = "https://cran.r-project.org")
 install.packages("shiny", repos = "https://cran.r-project.org")
+
 library(shiny)
 library(png)
 library(grid)
 library(knitr)
-
-
+library(rmarkdown)
 
 # Define the content for your Rmd document
 rmd_content <- c(
@@ -16,9 +16,8 @@ rmd_content <- c(
   "title: Descriptives of Results",
 "output:",
   "html_document:",
-    "toc: true",
 "params:",
-  "workdir: '../../gen/analysis/output/bar_chart.png'",
+  "workdir: '../../../gen/analysis/output/bar_chart.png'",
   "---",
   "",
   "## Introduction",
@@ -31,8 +30,8 @@ In the graph below, we generated the results of 5 capital cities in western Euro
   "## Image",
   "",
   "",
-  "```{r display_image, out.width = '100%'}",
-  "image_path <- '../../gen/analysis/output/bar_chart.png'",
+  "```{r display_image, out.width = '100%' ,echo=FALSE}",
+  "image_path <- '../../../gen/analysis/output/bar_chart.png'",
   "knitr::include_graphics(image_path)",
   "```",
   "",
@@ -45,9 +44,8 @@ Except for Berlin, there we see that the expensive rooms have the upper hand in 
 )
 
 # Create an Rmd file and write the content
-output_rmd_file <- "../../gen/analysis/output/descriptives.Rmd"
+output_rmd_file <- "../../gen/paper/output/descriptives.Rmd"
 writeLines(rmd_content, output_rmd_file)
-
-
+rmarkdown::render(input = output_rmd_file, output_format = "html_document")
 
 
