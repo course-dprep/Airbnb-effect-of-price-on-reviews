@@ -13,6 +13,7 @@ In the graph below, we generated the results of 5 capital cities in western Euro
 
 
 ```{r display_image, out.width = '100%'}
+library(png)
 image_path <- '../../gen/analysis/output/bar_chart.png'
 image <- readPNG(image_path)
 grid.raster(image)
