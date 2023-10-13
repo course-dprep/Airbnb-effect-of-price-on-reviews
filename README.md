@@ -93,9 +93,8 @@ For a smooth execution of the project, follow the installation guides on [Tilbur
   1. ./src/data-preparation -> clean_data.R
   2. ../src/data-preparation -> download_merge_data.R
   3. ../src/data-preparation -> download_packages.R
-  4. ../src/data-preparation -> download_packages.R
-  5. ../src/analysis -> analyze.R
-  6. ../src/paper -> dynamic_report.Rmd
+  4. ../src/analysis -> analyze.R
+  5. ../src/paper -> dynamic_report.Rmd
 
 # Resources
 * [Insideairbnb](http://insideairbnb.com/get-the-data/)
