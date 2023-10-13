@@ -6,7 +6,7 @@ output: html_document
 ## Introduction
 
 This is a dynamic Rmd document that will briefly analyse the results from this project.
-The main goal was to examine the effect that price of a Private room has on the number of reviews. 
+The main goal was to examine the effect that price of a Private room has on the number of yearly reviews. 
 In the graph below, we generated the results of 5 capital cities in western Europe to answer the research question. .
 
 ## Image
@@ -20,7 +20,6 @@ grid.raster(image)
 
 ## Data Summary
 
-From the graph we can tell that in 4 out of the 5 cities we analyzed, the cheaper private rooms have a higher number of yearly average reviews.
-Except for Berlin, there we see that the expensive rooms have the upper hand in number of yearly average reviews.
-In conclusion, we can say that the yearly avarage number of reviews for the cheaper rooms is bigger than the yearly avarage number of reviews of more expensive rooms
-
+Based on the graph data, we can see that in 3 of the 5 cities that we studied the expensive private rooms tend to have a higher yearly average of reviews. 
+In Paris, the difference in yearly reviews between cheaper and more expensive rooms is minimal. However, when it comes to Amsterdam, the more budget-friendly rooms take the lead in terms of yearly average reviews.
+In conclusion, the expensive rooms tend to receive more yearly reviews compared to their cheaper counterparts across the cities we have examined.
