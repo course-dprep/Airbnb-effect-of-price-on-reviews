@@ -46,29 +46,22 @@ By visualizing the data into barcharts we got the following insights. In Amsterd
 
 # Repository Overview
 ```
- 
-  ├── data
   ├── src
    ├── analysis
-      ├── Rplots.pdf
       ├── analyze.R
       ├── makefile
    ├── data-preparation
       ├── clean_data.R
       ├── download_merge_data.R
-      ├── download_packages.R
       ├── makefile
-   └── paper
-      ├── figure
-          ├── display_image-1.png
+   ├── paper
       ├── descriptives.Rmd
-      ├── dynamic_report.Rmd
       ├── makefile
-      ├── script_to_generate_descriptives.R
   ├── .gitignore
   ├── README.md
   ├── makefile
 ```
+Acces the output by ../gen/paper/descriptives.html
 # Dependencies
 For a smooth execution of the project, follow the installation guides on [Tilburg Science Hub](https://tilburgsciencehub.com)
 * R
@@ -90,11 +83,11 @@ For a smooth execution of the project, follow the installation guides on [Tilbur
      ``` make clean```
 
 * An alternative route to run the project using the repository context
-  1. ./src/data-preparation -> clean_data.R
-  2. ../src/data-preparation -> download_merge_data.R
-  3. ../src/data-preparation -> download_packages.R
-  4. ../src/analysis -> analyze.R
-  5. ../src/paper -> dynamic_report.Rmd
+  1. ../src/data-preparation -> download_merge_data.R
+  2. ../src/data-preparation -> clean_data.R
+  3. ../src/analysis -> analyze.R
+  4. ../src/paper -> descriptives.Rmd
+  5. Open output ../gen/paper/descriptives.html
 
 # Resources
 * [Insideairbnb](http://insideairbnb.com/get-the-data/)
