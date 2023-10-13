@@ -2,11 +2,10 @@ ANALYSIS = ../../gen/analysis/output
 PAPER = ../../gen/paper/output
 
 
-all: $(PAPER)/descriptives.Rmd $(PAPER)/descriptives.html
+all:$(PAPER)/descriptives.html
 
-$(PAPER)/descriptives.Rmd $(PAPER)/descriptives.html: script_to_generate_descriptives.R 
-	R --vanilla < script_to_generate_descriptives.R 
-
+$(PAPER)/descriptives.html: descriptives.Rmd
+		R -e rmarkdown::render(input = "descriptives.Rmd", output_dir = "../../gen/paper/output/descriptives.html")
 
 
 
