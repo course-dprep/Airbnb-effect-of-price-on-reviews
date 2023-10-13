@@ -83,7 +83,7 @@ For a smooth execution of the project, follow the installation guides on [Tilbur
   1. Fork this repository
   2. Open your terminal and run the following code
    ``` git clone https://github.com/{your username}/airbnb-effect-of-price-on-reviews.git ```
-  4. Set you working directory to ````airbnb-effect-of-price-on-reviews_ ``` and run the following command:
+  4. Set you working directory to ```airbnb-effect-of-price-on-reviews_ ``` and run the following command:
      ```make```
   6. Make will run all the code and will generate a html file with the barchart results of the analysis
   7. Ensure that the pipeline is cleaned of all unnecessary data files, running the following code in the terminal:
