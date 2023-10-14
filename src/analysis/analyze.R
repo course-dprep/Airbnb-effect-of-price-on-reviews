@@ -1,18 +1,17 @@
-#analysis
 library(readr)
-cleaned_data_final<-read_csv("../../gen/data-preparation/temp/cleaned_data_final.csv")
-
 library(dplyr)
-# Summary for the Cheapest Rooms
+library(ggplot2)
+
+#load data
+cleaned_data_final<-read_csv("../../gen/data-preparation/output/cleaned_data_final.csv")
+
+
+# Summary for the Cheapest Rooms to compute average reviews
 summary_reviews <- cleaned_data_final %>%
   group_by(is_cheap_expensive) %>%
   summarise(
     Average_Reviews_Yearly = mean(number_of_reviews_ltm, na.rm = TRUE)
   )
-
-
-# Load the ggplot2 library if not already loaded
-library(ggplot2)
 
 # Define a custom color palette for every two city codes
 city_colors <- c("AMS_cheap" = "skyblue","AMS_expensive" = "skyblue", "BER_cheap" = "salmon","BER_expensive" = "salmon", "BRU_cheap" = "lightgreen",
@@ -27,16 +26,16 @@ bar_chart <- ggplot(summary_reviews, aes(x = is_cheap_expensive, y = Average_Rev
   scale_fill_manual(values = city_colors) +  # Assign custom colors
   theme_minimal()
 
-# Print the bar chart
-print(bar_chart)
-
+#create output directories to save data
 dir.create('../../gen/analysis/output')
+dir.create('../../gen/paper')
+dir.create('../../gen/paper/output')
 
 # Define the file path where you want to save the PNG
 output_directory <- "../../gen/analysis/output"
 output_file <- file.path(output_directory, "bar_chart.png")
 
-# Save the bar chart as a PNG file
+# Save the output as a PNG file
 ggsave(output_file, plot = bar_chart, width = 14, height = 6, units = "in")
 
 

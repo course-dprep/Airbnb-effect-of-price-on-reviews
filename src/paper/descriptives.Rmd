@@ -4,9 +4,7 @@ title: Descriptives of Results
 output: html_document
 ---
 
-```{r, echo=FALSE}
-dir.create("../../gen/paper")
-dir.create("../../gen/paper/output")
+```{r, echo=FALSE, results='hide'}
 # Load necessary libraries
 install.packages("png", repos = "https://cran.r-project.org")
 install.packages("shiny", repos = "https://cran.r-project.org")
@@ -24,7 +22,7 @@ library(rmarkdown)
 
 This is a dynamic Rmd document that will briefly analyse the results from this project.
 The main goal was to examine the effect that price of a Private room has on the number of reviews. 
-In the graph below, we generated the results of 5 capital cities in western Europe to answer the research question. .
+In the graph below, we generated the results of 5 capital cities in western Europe to answer the research question. 
 
 ## Image
 ```{r display_image, out.width = '100%', echo=FALSE}
@@ -35,9 +33,8 @@ grid.raster(image)
 
 ## Data Summary
 
-From the graph we can tell that in 4 out of the 5 cities we analyzed, the cheaper private rooms have a higher number of yearly average reviews.
-Except for Berlin, there we see that the expensive rooms have the upper hand in number of yearly average reviews.
-In conclusion, we can say that the yearly average number of reviews for the cheaper rooms is bigger than the yearly average number of reviews of more expensive rooms.
+From the graph we can tell that in Berlin, Brussels and London , the expensive private rooms have a higher number of yearly average reviews. On the other hand, in Amsterdam, the cheaper rooms predominantly have more yearly average reviews. In Paris, there is no significant difference in the yearly average number of reviews between expensive and cheap Private rooms.
+In conclusion, we can say that the yearly average number of reviews for the expensive rooms is higher than the yearly average number of reviews of cheap rooms.
 
 
 

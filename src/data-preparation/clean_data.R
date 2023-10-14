@@ -1,12 +1,14 @@
 # Set up
 library(tidyverse)
+library(readr)
+library(dplyr)
 
 # Load the combined data frame
 df_framed <- read_csv("../../gen/data-preparation/temp/data_framed.csv")
 
 df_framed<- df_framed%>% filter(room_type == "Private room")
 
-
+#combine top 100 and bottom 100 listings based on price for each city
 filtered_df_cheap_AMS <- df_framed %>%
   filter(city_code == "AMS") %>%
   arrange(price) %>%
@@ -79,6 +81,7 @@ filtered_df_expensive_PAR <- df_framed %>%
 
 paris_top_bottom_100<-bind_rows(filtered_df_cheap_PAR, filtered_df_expensive_PAR)
 
+#create dataset that includes every top 100 and bottom 100 listing per city
 cleaned_data_final<- bind_rows(amsterdam_top_bottom_100, brussels_top_bottom_100, berlin_top_bottom_100, london_top_bottom_100, paris_top_bottom_100)
-
-write.csv(cleaned_data_final, file = "../../gen/data-preparation/temp/cleaned_data_final.csv", fileEncoding = "UTF-8",row.names=FALSE )
+#save data
+write.csv(cleaned_data_final, file = "../../gen/data-preparation/output/cleaned_data_final.csv", fileEncoding = "UTF-8",row.names=FALSE )
