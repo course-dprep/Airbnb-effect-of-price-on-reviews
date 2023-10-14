@@ -4,11 +4,10 @@ title: Descriptives of Results
 output: html_document
 ---
 
-```{r, echo=FALSE, results='hide'}
+```{r load_packages, echo=FALSE, results='hide'}
 # Load necessary libraries
 install.packages("png", repos = "https://cran.r-project.org")
 install.packages("shiny", repos = "https://cran.r-project.org")
-
 library(shiny)
 library(png)
 library(grid)

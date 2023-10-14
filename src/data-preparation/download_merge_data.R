@@ -1,5 +1,7 @@
-
 ## installing all necessary packages
+install.packages("tidyverse", repos = "https://cran.r-project.org")
+install.packages("dplyr", repos = "https://cran.r-project.org")
+install.packages("readr", repos = "https://cran.r-project.org")
 library(tidyverse)
 library(dplyr)
 library(readr)

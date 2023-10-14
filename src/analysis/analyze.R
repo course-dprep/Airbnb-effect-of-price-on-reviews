@@ -1,3 +1,5 @@
+#install packages
+install.packages("ggplot2", repos = "https://cran.r-project.org")
 library(readr)
 library(dplyr)
 library(ggplot2)
