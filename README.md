@@ -12,7 +12,7 @@ We are curious whether the amount of reviews is higher for the top 100 most expe
 
 # Method and Results
 ## Method
-The importance of considering the pricing on reviews is to gain a better understanding of the relationship between the yearly reviews and the pricing of private rooms. The research method chosen is an analysis of the ouput of the available data in 5 citites in 2022 and 2023 on Airbnb. The 2 categories are coded as the 100 cheapest private rooms (0) and the 100 most expensive private rooms (1).
+The importance of considering the pricing on reviews is to gain a better understanding of the relationship between the yearly reviews and the pricing of private rooms. The research method chosen is an analysis of the ouput of the available data in 5 citites in 2022 and 2023 on Airbnb. The 2 categories are coded as the 100 cheapest private rooms per city (e.g. AMS_cheap) and the 100 most expensive private rooms per city (e.g. AMS_expensive).
 
 In this research, we have selected 5 capitals from western European countries. The reason for this is that those cities are most likely to have similar circumstances and thus will provide a solid background to research the question. The five selected cities are:
 * Amsterdam
@@ -32,12 +32,12 @@ The following variable types are used in our research:
 | City         | City of observation               | character  
 | Price        | Listing price of room per night   | numeric  
 | Date         | June 2023 & December 2022         | date  
-| Room type    | private room                      | character  
+| Room type    | Private room                      | character  
 
 ```
 
 ##  Type of analysis
-To adress our research question, we first decided to take a close look at the output of our code. After which we will create barcharts of the chosen variables. The dependent variable in this research is the amount of reviews that a private rooms has received and the independent variable is the price of the private room. We decided on adding 5 different cities to see if the location might also have an affect. By adding a control variable, the aim is to get a better understanding of the effect of yearly reviews and whether this finding is consistent over multiple cities.
+To adress our research question, we first decided to take a close look at the output of our code. After which we will create barcharts of the chosen variables. The dependent variable in this research is the amount of reviews on average that cheap or expensive rooms in a city have received and the independent variable is the price of these private rooms. We decided on adding 5 different cities to see if the location might also have an effect. By adding a control variable, the aim is to get a better understanding of the effect of yearly reviews and whether this finding is consistent over multiple cities.
 
 ## Results
 After running our code, we figured out that the results are slightly inconsistent and thus it is harder to generalize a conclusion of the data.
@@ -61,7 +61,7 @@ By visualizing the data into barcharts we got the following insights. In Amsterd
   ├── README.md
   ├── makefile
 ```
-Acces the output by ../gen/paper/descriptives.html
+Acces the output by ../gen/paper/output/descriptives.html
 # Dependencies
 For a smooth execution of the project, follow the installation guides on [Tilburg Science Hub](https://tilburgsciencehub.com)
 * R
@@ -70,6 +70,8 @@ For a smooth execution of the project, follow the installation guides on [Tilbur
     * [Setting up Make](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/make/)
  * Github
      * [Setting up Git and Github](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/git/)
+ * PanDoc
+     [To knit RMarkdown documents, make sure you have installed Pandoc using the installation guide on their website](https://pandoc.org/installing.html)
 
 # Example of workflow research reproduction
 * Running the code by using Make
