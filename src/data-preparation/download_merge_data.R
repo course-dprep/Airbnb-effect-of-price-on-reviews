@@ -52,9 +52,11 @@ all_data <- bind_rows(
   amsterdam_2023, berlin_2023, brussels_2023, london_2023, paris_2023
 )
 
+# Create directories to save data
 dir.create('../../gen')
 dir.create('../../gen/data-preparation')
 dir.create('../../gen/data-preparation/temp')
+dir.create('../../gen/data-preparation/output')
 write.csv(all_data, file = "../../gen/data-preparation/temp/data_framed.csv", fileEncoding = "UTF-8",row.names=FALSE )
 
 cat("Combined data saved as CSV:\n")

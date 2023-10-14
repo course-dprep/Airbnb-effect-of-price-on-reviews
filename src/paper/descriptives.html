@@ -353,22 +353,6 @@ display: none;
 </div>
 
 
-<pre><code>## Warning in dir.create(&quot;../../gen/paper&quot;): &#39;..\..\gen\paper&#39; already exists</code></pre>
-<pre><code>## Warning in dir.create(&quot;../../gen/paper/output&quot;): &#39;..\..\gen\paper\output&#39;
-## already exists</code></pre>
-<pre><code>## package &#39;png&#39; successfully unpacked and MD5 sums checked</code></pre>
-<pre><code>## Warning: cannot remove prior installation of package &#39;png&#39;</code></pre>
-<pre><code>## Warning in file.copy(savedcopy, lib, recursive = TRUE): problem copying
-## C:\R\R-4.3.1\library\00LOCK\png\libs\x64\png.dll to
-## C:\R\R-4.3.1\library\png\libs\x64\png.dll: Permission denied</code></pre>
-<pre><code>## Warning: restored &#39;png&#39;</code></pre>
-<pre><code>## 
-## The downloaded binary packages are in
-##  C:\Users\rickm\AppData\Local\Temp\RtmpmQKdOW\downloaded_packages</code></pre>
-<pre><code>## package &#39;shiny&#39; successfully unpacked and MD5 sums checked
-## 
-## The downloaded binary packages are in
-##  C:\Users\rickm\AppData\Local\Temp\RtmpmQKdOW\downloaded_packages</code></pre>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <p>This is a dynamic Rmd document that will briefly analyse the results
@@ -383,15 +367,14 @@ the research question. .</p>
 </div>
 <div id="data-summary" class="section level2">
 <h2>Data Summary</h2>
-<p>From the graph we can tell that in 4 out of the 5 cities we analyzed,
-the cheaper private rooms have a higher number of yearly average
-reviews. Except for Berlin, there we see that the expensive rooms have
-the upper hand in number of yearly average reviews. In conclusion, we
-can say that the yearly average number of reviews for the cheaper rooms
-is bigger than the yearly average number of reviews of more expensive
-rooms.</p>
-<p>rmarkdown::render(input = descriptives.Rmd, output_format =
-“html_document”)</p>
+<p>From the graph we can tell that in Berlin, Brussels and London , the
+expensive private rooms have a higher number of yearly average reviews.
+On the other hand, in Amsterdam, the cheaper rooms predominantly have
+more yearly average reviews. In Paris, there is no significant
+difference in the yearly average number of reviews between expensive and
+cheap Private rooms. In conclusion, we can say that the yearly average
+number of reviews for the expensive rooms is higher than the yearly
+average number of reviews of cheap rooms.</p>
 </div>
 
 

@@ -1,4 +1,3 @@
-DATA = ../../data
 TEMP = ../../gen/data-preparation/temp
 OUTPUT = ../../gen/data-preparation/output
 

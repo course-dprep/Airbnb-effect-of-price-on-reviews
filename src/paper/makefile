@@ -1,12 +1,6 @@
-ANALYSIS = ../../gen/analysis/output
-PAPER = ../../gen/paper/output
+RMD_FILE = descriptives.Rmd
+HTML_OUTPUT = descriptives.html
 
 
-all:$(PAPER)/descriptives.html
-
-$(PAPER)/descriptives.html: descriptives.Rmd
-		R -e rmarkdown::render(input = "descriptives.Rmd", output_dir = "../../gen/paper/output/descriptives.html")
-
-
-
-
+../../gen/paper/output/html: $(RMD_FILE)
+	Rscript -e "rmarkdown::render('$<', output_file = '../../gen/paper/output/$(HTML_OUTPUT)')"

@@ -11,6 +11,4 @@ paper: analysis
 	
 clean:
 	R -e "unlink(list.files(pattern='*.pdf', recursive=T))"
-	R -e "unlink(list.files(pattern='*.png', recursive=T))"
-	R -e "unlink(list.files(pattern='*.csv', recursive=T))"
 	R -e "unlink('gen', recursive=TRUE)"
