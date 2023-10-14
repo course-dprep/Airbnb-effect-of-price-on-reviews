@@ -71,7 +71,7 @@ For a smooth execution of the project, follow the installation guides on [Tilbur
  * Github
      * [Setting up Git and Github](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/git/)
  * PanDoc
-     [To knit RMarkdown documents, make sure you have installed Pandoc using the installation guide on their website](https://pandoc.org/installing.html)
+     To knit RMarkdown documents, make sure you have installed Pandoc using the installation guide on their website(https://pandoc.org/installing.html)
 
 # Example of workflow research reproduction
 * Running the code by using Make
