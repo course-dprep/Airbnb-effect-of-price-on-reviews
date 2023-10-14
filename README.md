@@ -87,7 +87,7 @@ For a smooth execution of the project, follow the installation guides on [Tilbur
   2. ../src/data-preparation -> clean_data.R
   3. ../src/analysis -> analyze.R
   4. ../src/paper -> descriptives.Rmd
-  5. Open output ../gen/paper/descriptives.html
+  5. Open output ../gen/paper/output/descriptives.html
 
 # Resources
 * [Insideairbnb](http://insideairbnb.com/get-the-data/)
