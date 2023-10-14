@@ -4,7 +4,7 @@ title: Descriptives of Results
 output: html_document
 ---
 
-```{r load_packages, echo=FALSE, results='hide'}
+```{r load packages, echo=FALSE, results='hide'}
 # Load necessary libraries
 install.packages("png", repos = "https://cran.r-project.org")
 install.packages("shiny", repos = "https://cran.r-project.org")
