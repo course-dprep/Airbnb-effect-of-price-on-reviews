@@ -76,8 +76,8 @@ For a smooth execution of the project, follow the installation guides on [Tilbur
  * PanDoc
      To knit RMarkdown documents, make sure you have installed Pandoc using the installation guide on their website (https://pandoc.org/installing.html)
 
-```
 If you run the whole script all necessary packages will be installed. Additionally, you can install the following packages here:
+```
 install.packages("readr")
 install.packages("tidyverse")
 install.packages("dplyr")
